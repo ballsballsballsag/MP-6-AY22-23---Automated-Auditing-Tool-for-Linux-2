@@ -16,4 +16,4 @@ else
 fi
 
 echo "${auditno} ${auditname}  \t   [${auditres}]"
-~                                                     
+                                                     
