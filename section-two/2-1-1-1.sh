@@ -6,7 +6,7 @@ auditname="Ensure time synchronization is in use"
 cmd=$(systemctl is-enabled systemd-timesyncd)
 cmd1=$(dpkg -s chrony)
 cmd2=$(dpkg -s ntp )
-correct=enabled
+correct="enabled"
 correct1=""
 correct2=""
 if [ "$cmd" = "$correct" ] && [ "$cmd1" != "$correct1" ] && [ "$cmd2" != "$correct2" ]

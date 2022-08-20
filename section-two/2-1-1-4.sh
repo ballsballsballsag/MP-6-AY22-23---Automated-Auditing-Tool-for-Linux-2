@@ -9,7 +9,7 @@ cmd2=$(grep "^restrict" /etc/ntp.conf)
 cmd3=$(grep -E "^(server|pool)" /etc/ntp.conf)
 cmd4=$(grep "RUNASUSER=ntp" /etc/init.d/ntp)
 correct=""
-correct1=masked
+correct1="masked"
 correct2="restrict -4 default kod notrap nomodify nopeer noquery limited
 restrict -6 default kod notrap nomodify nopeer noquery limited "
 correct3=""

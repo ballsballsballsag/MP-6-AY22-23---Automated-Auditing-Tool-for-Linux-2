@@ -8,7 +8,7 @@ cmd1=$(systemctl is-enabled systemd-timesyncd)
 cmd2=$(grep -E "^(server|pool)" /etc/chrony/chrony.conf)
 cmd3=$(ps -ef | grep chronyd | cut -f 1)
 correct=""
-correct1=masked
+correct1="masked"
 correct2=""
 corect3="_chrony"
 if [ "$cmd" = "$correct" ] && [ "$cmd1" = "$correct1" ] && [ "$cmd2" != "$correct2" ] && [ "$cmd3" = "$correct3" ]

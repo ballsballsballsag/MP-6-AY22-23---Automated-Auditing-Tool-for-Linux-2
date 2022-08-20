@@ -9,7 +9,7 @@ cmd2=$(systemctl is-enabled systemd-timesyncd.service)
 cmd3=$(timedatectl status)
 correct=""
 correct1=""
-correct2=enabled
+correct2="enabled"
 correct3=""
 if [ "$cmd" = "$correct" ] && [ "$cmd1" = "$correct1" ] && [ "$cmd2" = "$correct2" ] && [ "$cmd3" != "$correct3" ]
 then

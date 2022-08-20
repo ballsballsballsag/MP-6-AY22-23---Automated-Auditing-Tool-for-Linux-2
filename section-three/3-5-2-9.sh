@@ -4,7 +4,7 @@ auditno="3.5.2.9"
 auditname="Ensure nftables service is enabled"
 
 cmd=$(systemctl is-enabled nftables)
-correct=enabled
+correct="enabled"
 if [ "$cmd" = "$correct" ]
 then
         auditres="\033[32mPass\033[m"
