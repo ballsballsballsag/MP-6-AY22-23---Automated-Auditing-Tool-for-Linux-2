@@ -9,9 +9,10 @@ Chain FORWARD (policy DROP)
 Chain OUTPUT (policy DROP)"
 if [ "$cmd" = "$correct" ]
 then
-        auditres="Pass"
+       auditres="\033[32mPass\033[m"
 else
-        auditres="Fail"
+        auditres="\033[31mFail\033[m"
+
 fi
-echo "$cmd"
-echo "${auditno} \t${auditname} \t\t[${auditres}]"
+echo "${auditno} $auditname} \t\t   [${auditres}]"
+

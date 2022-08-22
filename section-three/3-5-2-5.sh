@@ -11,9 +11,10 @@ correct1="type filter hook forward priority 0;"
 correct2="type filter hook output priority 0;"
 if [ "$cmd" = "$correct" ] && [ "$cmd1" = "$correct1" ] && [ "$cmd2" = "$correct2" ]
 then
-        auditres="Pass"
+        auditres="\033[32mPass\033[m"
 else
-        auditres="Fail"
-fi
+        auditres="\033[31mFail\033[m"
 
+fi
 echo "${auditno} \t${auditname} \t\t\t[${auditres}]"
+
