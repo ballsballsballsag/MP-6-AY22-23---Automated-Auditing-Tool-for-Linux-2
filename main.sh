@@ -4,11 +4,25 @@ first="Ubuntu"
 second="CentOS"
 third="Debian"
 fourth="Fedora"
+info=$(lsb_release -a)
+timing=$(timedatectl | head -4)
+removal=$(rm /script/report.txt)
 
 if [ "$OS" = "$first" ]
 
 
 then
+
+#Section One
+sno=1
+s1="Initial setup"
+ss1="1.1 Filesystem configuration"
+ss2="1.3 Ensure AIDE is installed"
+ss3="1.4 Secure Boot Settings"
+ss4="1.5 Additional Process Hardening"
+ss5="1.6 Mandatory Access Control"
+ss6="1.7 Command Line Warning Banners"
+ss7="1.8 GNOME Display Manager"
 
 # Section One 
 sno1=1
@@ -59,12 +73,17 @@ s6="System Maintenance"
 ss24="6.1 System File Permissions"
 ss25="6.2 User and Group settings"
 
-# Section One main.sh
+
 echo -e "\n"
-echo -e "========== Benchmark:Ubuntu ==========\n"
-echo -e "========== Section ${sno1}: ${s1} ==========\n"
-echo -e "$ss1\n"
-sh 1-1-1-1.sh
+echo -e "This is the OS Name as well as the version $info \n"
+echo -e "Time when benchmarking was done $timing \n" >> /script/report.txt
+echo -e "========== Benchmark:Ubuntu ==========\n" >> /script/report.txt
+echo -e "========== Section ${sno}: ${s} ==========\n" >> /script/report.txt
+echo -e "$ss1\n" >> /script/report.txt
+
+
+sh 1-1-1-1.sh 
+sh 1-1-1-1.sh	>> /script/report.txt
 ret=$(sh 1-1-1-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -74,7 +93,8 @@ then
 else
 	fcount=$((fcount+1))
 fi
-sh 1-1-1-2.sh
+sh 1-1-1-2.sh 
+sh 1-1-1-2.sh >> /script/report.txt
 ret=$(sh 1-1-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -85,8 +105,8 @@ else
         fcount=$((fcount+1))
 fi
 
-
-sh 1-1-1-3.sh
+sh 1-1-1-3.sh 
+sh 1-1-1-3.sh >> /script/report.txt
 ret=$(sh 1-1-1-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -97,8 +117,8 @@ else
         fcount=$((fcount+1))
 fi
 
-
-sh 1-1-1-4.sh
+sh 1-1-1-4.sh 
+sh 1-1-1-4.sh >> /script/report.txt
 ret=$(sh 1-1-1-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -109,8 +129,8 @@ else
         fcount=$((fcount+1))
 fi
 
-
-sh 1-1-1-5.sh
+sh 1-1-1-5.sh 
+sh 1-1-1-5.sh >> /script/report.txt
 ret=$(sh 1-1-1-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -123,6 +143,7 @@ fi
 
 
 sh 1-1-1-6.sh
+sh 1-1-1-6.sh >> /script/report.txt
 ret=$(sh 1-1-1-6.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -135,6 +156,7 @@ fi
 
 
 sh 1-1-1-7.sh
+sh 1-1-1-7.sh >> /script/report.txt
 ret=$(sh 1-1-1-7.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -146,6 +168,7 @@ else
 fi
 
 sh 1-1-2.sh
+sh 1-1-2.sh >> /script/report.txt
 ret=$(sh 1-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -158,6 +181,7 @@ fi
 
 
 sh 1-1-3.sh
+sh 1-1-3.sh >> /script/report.txt
 ret=$(sh 1-1-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -170,6 +194,7 @@ fi
 
 
 sh 1-1-4.sh
+sh 1-1-4.sh >> /script/report.txt
 ret=$(sh 1-1-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -182,6 +207,7 @@ fi
 
 
 sh 1-1-5.sh
+sh 1-1-5.sh >> /script/report.txt
 ret=$(sh 1-1-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -194,6 +220,7 @@ fi
 
 
 sh 1-1-6.sh
+sh 1-1-6.sh >> /script/report.txt
 ret=$(sh 1-1-6.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -206,6 +233,7 @@ fi
 
 
 sh 1-1-7.sh
+sh 1-1-7.sh >> /script/report.txt
 ret=$(sh 1-1-7.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -218,6 +246,7 @@ fi
 
 
 sh 1-1-8.sh
+sh 1-1-8.sh >> /script/report.txt
 ret=$(sh 1-1-8.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -230,6 +259,7 @@ fi
 
 
 sh 1-1-9.sh
+sh 1-1-9.sh >> /script/report.txt
 ret=$(sh 1-1-9.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -242,6 +272,7 @@ fi
 
 
 sh 1-1-10.sh
+sh 1-1-10.sh >> /script/report.txt
 ret=$(sh 1-1-10.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -253,6 +284,7 @@ else
 fi
 
 sh 1-1-11.sh
+sh 1-1-11.sh >> /script/report.txt
 ret=$(sh 1-1-11.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -265,6 +297,7 @@ fi
 
 
 sh 1-1-12.sh
+sh 1-1-12.sh >> /script/report.txt
 ret=$(sh 1-1-12.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -277,6 +310,7 @@ fi
 
 
 sh 1-1-13.sh
+sh 1-1-13.sh >> /script/report.txt
 ret=$(sh 1-1-13.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -289,6 +323,7 @@ fi
 
 
 sh 1-1-14.sh
+sh 1-1-14.sh >> /script/report.txt
 ret=$(sh 1-1-14.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -301,6 +336,7 @@ fi
 
 
 sh 1-1-15.sh
+sh 1-1-15.sh >> /script/report.txt
 ret=$(sh 1-1-15.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -313,6 +349,7 @@ fi
 
 
 sh 1-1-16.sh
+sh 1-1-16.sh >> /script/report.txt
 ret=$(sh 1-1-16.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -325,6 +362,7 @@ fi
 
 
 sh 1-1-17.sh
+sh 1-1-17.sh >> /script/report.txt
 ret=$(sh 1-1-17.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -336,6 +374,7 @@ else
 fi
 
 sh 1-1-18.sh
+sh 1-1-18.sh >> /script/report.txt
 ret=$(sh 1-1-18.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -347,6 +386,7 @@ else
 fi
 
 sh 1-1-19.sh
+sh 1-1-19.sh >> /script/report.txt
 ret=$(sh 1-1-19.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -358,6 +398,7 @@ else
 fi
 
 sh 1-1-20.sh 
+sh 1-1-20.sh >> /script/report.txt
 ret=$(sh 1-1-20.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -369,6 +410,7 @@ else
 fi
 
 sh 1-1-21.sh
+sh 1-1-21.sh >> /script/report.txt
 ret=$(sh 1-1-21.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -382,6 +424,7 @@ fi
 
 
 sh 1-1-22.sh
+sh 1-1-22.sh >> /script/report.txt
 ret=$(sh 1-1-22.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -394,6 +437,7 @@ fi
 
 
 sh 1-1-23.sh
+sh 1-1-23.sh >> /script/report.txt
 ret=$(sh 1-1-23.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -406,6 +450,7 @@ fi
 
 
 sh 1-1-24.sh
+sh 1-1-24.sh >> /script/report.txt
 ret=$(sh 1-1-24.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -420,6 +465,7 @@ fi
 echo -e " \n"
 echo -e "$ss2"
 sh 1-3-1.sh
+sh 1-3-1.sh >> /script/report.txt
 ret=$(sh 1-3-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -432,6 +478,7 @@ fi
 
 
 sh 1-3-2.sh
+sh 1-3-2.sh >> /script/report.txt
 ret=$(sh 1-3-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -446,6 +493,7 @@ fi
 echo -e " \n"
 echo -e "$ss3"
 sh 1-4-1.sh
+sh 1-4-1.sh >> /script/report.txt
 ret=$(sh 1-4-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -458,6 +506,7 @@ fi
 
 
 sh 1-4-2.sh
+sh 1-4-2.sh >> /script/report.txt
 ret=$(sh 1-4-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -470,6 +519,7 @@ fi
 
 
 sh 1-4-3.sh
+sh 1-4-3.sh >> /script/report.txt
 ret=$(sh 1-4-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -482,6 +532,7 @@ fi
 
 
 sh 1-4-4.sh
+sh 1-4-4.sh >> /script/report.txt
 ret=$(sh 1-4-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -497,6 +548,7 @@ echo -e " \n"
 echo "$ss4"
 
 sh 1-5-1.sh
+sh 1-5-1.sh >> /script/report.txt
 ret=$(sh 1-5-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -509,6 +561,7 @@ fi
 
 
 sh 1-5-2.sh
+sh 1-5-2.sh >> /script/report.txt
 ret=$(sh 1-5-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -521,6 +574,7 @@ fi
 
 
 sh 1-5-3.sh
+sh 1-5-3.sh >> /script/report.txt
 ret=$(sh 1-5-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -533,6 +587,7 @@ fi
 
 
 sh 1-5-4.sh
+sh 1-5-4.sh >> /script/report.txt
 ret=$(sh 1-5-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -547,6 +602,7 @@ fi
 echo -e " \n"
 echo "$ss5"
 sh 1-6-1-1.sh
+sh 1-6-1-1.sh >> /script/report.txt
 ret=$(sh 1-6-1-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -558,6 +614,7 @@ else
 fi
 
 sh 1-6-1-2.sh
+sh 1-6-1-2.sh >> /script/report.txt
 ret=$(sh 1-6-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -569,6 +626,7 @@ else
 fi
 
 sh 1-6-1-3.sh
+sh 1-6-1-3.sh >> /script/report.txt
 ret=$(sh 1-6-1-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -580,6 +638,7 @@ else
 fi
 
 sh 1-6-1-4.sh
+sh 1-6-1-4.sh >> /script/report.txt
 ret=$(sh 1-6-1-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -594,6 +653,7 @@ fi
 echo -e " \n"
 echo "$ss6"
 sh 1-7-1.sh
+sh 1-7-1.sh >> /script/report.txt
 ret=$(sh 1-7-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -605,6 +665,7 @@ else
 fi
 
 sh 1-7-2.sh
+sh 1-7-2.sh >> /script/report.txt
 ret=$(sh 1-7-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -616,6 +677,7 @@ else
 fi
 
 sh 1-7-3.sh
+sh 1-7-3.sh >> /script/report.txt
 ret=$(sh 1-7-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -627,6 +689,7 @@ else
 fi
 
 sh 1-7-4.sh
+sh 1-7-4.sh >> /script/report.txt
 ret=$(sh 1-7-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -638,6 +701,7 @@ else
 fi
 
 sh 1-7-5.sh
+sh 1-7-5.sh >> /script/report.txt
 ret=$(sh 1-7-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -649,6 +713,7 @@ else
 fi
 
 sh 1-7-6.sh
+sh 1-7-6.sh >> /script/report.txt
 ret=$(sh 1-7-6.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -661,7 +726,21 @@ fi
 
 echo -e " \n"
 echo "$ss7"
+
+sh 1-8-1.sh
+sh 1-8-1.sh >> /script/report.txt
+ret=$(sh 1-8-1.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+
 sh 1-8-2.sh
+sh 1-8-2.sh >> /script/report.txt
 ret=$(sh 1-8-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -673,6 +752,7 @@ else
 fi
 
 sh 1-8-3.sh
+sh 1-8-3.sh >> /script/report.txt
 ret=$(sh 1-8-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -684,6 +764,7 @@ else
 fi
 
 sh 1-8-4.sh
+sh 1-8-4.sh >> /script/report.txt
 ret=$(sh 1-8-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -695,6 +776,7 @@ else
 fi
 
 sh 1-9.sh 
+sh 1-9.sh >> /script/report.txt
 ret=$(sh 1-9.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -710,6 +792,7 @@ fi
 echo "========== Section ${sno2} : ${s2} =============="
 echo "$ss8"
 sh 2-1-1-1.sh
+sh 2-1-1-1.sh   >> /script/report.txt
 ret=$(sh 2-1-1-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -721,6 +804,7 @@ else
 fi
 
 sh 2-1-1-2.sh
+sh 2-1-1-2.sh   >> /script/report.txt
 ret=$(sh 2-1-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -732,6 +816,7 @@ else
 fi
 
 sh 2-1-3.sh
+sh 2-1-3.sh   >> /script/report.txt
 ret=$(sh 2-1-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -743,6 +828,7 @@ else
 fi
 
 sh 2-1-4.sh
+sh 2-1-4.sh   >> /script/report.txt
 ret=$(sh 2-1-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -754,6 +840,7 @@ else
 fi
 
 sh 2-1-5.sh
+sh 2-1-5.sh   >> /script/report.txt
 ret=$(sh 2-1-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -765,6 +852,7 @@ else
 fi
 
 sh 2-1-6.sh
+sh 2-1-6.sh   >> /script/report.txt
 ret=$(sh 2-1-6.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -776,6 +864,7 @@ else
 fi
 
 sh 2-1-7.sh
+sh 2-1-7.sh   >> /script/report.txt
 ret=$(sh 2-1-7.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -787,6 +876,7 @@ else
 fi
 
 sh 2-1-8.sh
+sh 2-1-8.sh   >> /script/report.txt
 ret=$(sh 2-1-8.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -798,6 +888,7 @@ else
 fi
 
 sh 2-1-9.sh
+sh 2-1-9.sh   >> /script/report.txt
 ret=$(sh 2-1-9.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -809,6 +900,7 @@ else
 fi
 
 sh 2-1-10.sh
+sh 2-1-10.sh   >> /script/report.txt
 ret=$(sh 2-1-10.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -820,6 +912,7 @@ else
 fi
 
 sh 2-1-11.sh
+sh 2-1-11.sh   >> /script/report.txt
 ret=$(sh 2-1-11.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -831,6 +924,7 @@ else
 fi
 
 sh 2-1-12.sh
+sh 2-1-12.sh   >> /script/report.txt
 ret=$(sh 2-1-12.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -841,7 +935,8 @@ else
         fcount=$((fcount+1))
 fi
 
-h 2-1-13.sh
+sh 2-1-13.sh
+sh 2-1-13.sh   >> /script/report.txt
 ret=$(sh 2-1-13.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -853,6 +948,7 @@ else
 fi
 
 sh 2-1-14.sh
+sh 2-1-14.sh   >> /script/report.txt
 ret=$(sh 2-1-14.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -864,6 +960,7 @@ else
 fi
 
 sh 2-1-15.sh
+sh 2-1-15.sh   >> /script/report.txt
 ret=$(sh 2-1-15.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -875,6 +972,7 @@ else
 fi
 
 sh 2-1-16.sh
+sh 2-1-16.sh   >> /script/report.txt
 ret=$(sh 2-1-16.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -886,6 +984,7 @@ else
 fi
 
 sh 2-1-17.sh
+sh 2-1-17.sh   >> /script/report.txt
 ret=$(sh 2-1-17.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -899,6 +998,7 @@ fi
 echo ""
 echo "$ss9"
 sh 2-2-1.sh
+sh 2-2-1.sh   >> /script/report.txt
 ret=$(sh 2-2-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -910,6 +1010,7 @@ else
 fi
 
 sh 2-2-2.sh
+sh 2-2-2.sh   >> /script/report.txt
 ret=$(sh 2-2-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -921,6 +1022,7 @@ else
 fi
 
 sh 2-2-3.sh
+sh 2-2-3.sh   >> /script/report.txt
 ret=$(sh 2-2-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -932,6 +1034,7 @@ else
 fi
 
 sh 2-2-4.sh
+sh 2-2-4.sh   >> /script/report.txt
 ret=$(sh 2-2-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -943,6 +1046,7 @@ else
 fi
 
 sh 2-2-5.sh
+sh 2-2-5.sh   >> /script/report.txt
 ret=$(sh 2-2-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -954,6 +1058,7 @@ else
 fi
 
 sh 2-2-6.sh
+sh 2-2-6.sh   >> /script/report.txt
 ret=$(sh 2-2-6.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -968,6 +1073,7 @@ echo -e "\n========== Section ${sno3}: ${s3} =========="
 echo -e "$ss10"
 
 sh 3-1-2.sh
+sh 3-1-2.sh   >> /script/report.txt
 ret=$(sh 3-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -980,6 +1086,7 @@ fi
 
 echo -e "\n$ss11"
 sh 3-2-1.sh
+sh 3-2-1.sh   >> /script/report.txt
 ret=$(sh 3-2-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -991,6 +1098,7 @@ else
 fi
 
 sh 3-2-2.sh
+sh 3-2-2.sh   >> /script/report.txt
 ret=$(sh 3-2-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1003,6 +1111,7 @@ fi
 
 echo -e "\n$ss12"
 sh 3-3-1.sh
+sh 3-3-1.sh   >> /script/report.txt
 ret=$(sh 3-3-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1014,6 +1123,7 @@ else
 fi
 
 sh 3-3-2.sh
+sh 3-3-2.sh   >> /script/report.txt
 ret=$(sh 3-3-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1025,6 +1135,7 @@ else
 fi
 
 sh 3-3-3.sh
+sh 3-3-3.sh   >> /script/report.txt
 ret=$(sh 3-3-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1036,6 +1147,7 @@ else
 fi
 
 sh 3-3-4.sh
+sh 3-3-4.sh   >> /script/report.txt
 ret=$(sh 3-3-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1047,6 +1159,7 @@ else
 fi
 
 sh 3-3-5.sh
+sh 3-3-5.sh   >> /script/report.txt
 ret=$(sh 3-3-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1058,6 +1171,7 @@ else
 fi
 
 sh 3-3-6.sh
+sh 3-3-6.sh   >> /script/report.txt
 ret=$(sh 3-3-6.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1069,6 +1183,7 @@ else
 fi
 
 sh 3-3-7.sh
+sh 3-3-7.sh   >> /script/report.txt
 ret=$(sh 3-3-7.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1080,6 +1195,7 @@ else
 fi
 
 sh 3-3-8.sh
+sh 3-3-8.sh   >> /script/report.txt
 ret=$(sh 3-3-8.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1091,6 +1207,7 @@ else
 fi
 
 sh 3-3-9.sh
+sh 3-3-9.sh   >> /script/report.txt
 ret=$(sh 3-3-9.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1103,6 +1220,7 @@ fi
 
 echo -e "\n$ss13"
 sh 3-4-1.sh
+sh 3-4-1.sh   >> /script/report.txt
 ret=$(sh 3-4-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1114,6 +1232,7 @@ else
 fi
 
 sh 3-4-2.sh
+sh 3-4-2.sh   >> /script/report.txt
 ret=$(sh 3-4-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1125,6 +1244,7 @@ else
 fi
 
 sh 3-4-3.sh
+sh 3-4-3.sh   >> /script/report.txt
 ret=$(sh 3-4-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1136,6 +1256,7 @@ else
 fi
 
 sh 3-4-4.sh
+sh 3-4-4.sh   >> /script/report.txt
 ret=$(sh 3-4-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1148,6 +1269,7 @@ fi
 
 echo -e "\n$ss14"
 sh 3-5-1-1.sh
+sh 3-5-1-1.sh   >> /script/report.txt
 ret=$(sh 3-5-1-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1159,6 +1281,7 @@ else
 fi
 
 sh 3-5-1-2.sh
+sh 3-5-1-2.sh   >> /script/report.txt
 ret=$(sh 3-5-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1170,6 +1293,7 @@ else
 fi
 
 sh 3-5-1-3.sh
+sh 3-5-1-3.sh   >> /script/report.txt
 ret=$(sh 3-5-1-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1181,6 +1305,7 @@ else
 fi
 
 sh 3-5-1-4.sh
+sh 3-5-1-4.sh   >> /script/report.txt
 ret=$(sh 3-5-1-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1192,6 +1317,7 @@ else
 fi
 
 sh 3-5-1-7.sh
+sh 3-5-1-7.sh   >> /script/report.txt
 ret=$(sh 3-5-1-7.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1203,6 +1329,7 @@ else
 fi
 
 sh 3-5-2-1.sh
+sh 3-5-2-1.sh   >> /script/report.txt
 ret=$(sh 3-5-2-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1214,6 +1341,7 @@ else
 fi
 
 sh 3-5-2-2.sh
+sh 3-5-2-2.sh   >> /script/report.txt
 ret=$(sh 3-5-2-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1225,6 +1353,7 @@ else
 fi
 
 sh 3-5-2-4.sh
+sh 3-5-2-4.sh   >> /script/report.txt
 ret=$(sh 3-5-2-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1236,6 +1365,7 @@ else
 fi
 
 sh 3-5-2-5.sh
+sh 3-5-2-5.sh   >> /script/report.txt
 ret=$(sh 3-5-2-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1247,6 +1377,7 @@ else
 fi
 
 sh 3-5-2-6.sh
+sh 3-5-2-6.sh   >> /script/report.txt
 ret=$(sh 3-5-2-6.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1258,6 +1389,7 @@ else
 fi
 
 sh 3-5-2-8.sh
+sh 3-5-2-8.sh   >> /script/report.txt
 ret=$(sh 3-5-2-8.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1269,6 +1401,7 @@ else
 fi
 
 sh 3-5-2-9.sh
+sh 3-5-2-9.sh   >> /script/report.txt
 ret=$(sh 3-5-2-9.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1280,6 +1413,7 @@ else
 fi
 
 sh 3-5-2-10.sh
+sh 3-5-2-10.sh   >> /script/report.txt
 ret=$(sh 3-5-2-10.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1291,6 +1425,7 @@ else
 fi
 
 sh 3-5-3-1-1.sh
+sh 3-5-3-1-1.sh   >> /script/report.txt
 ret=$(sh 3-5-3-1-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1302,6 +1437,7 @@ else
 fi
 
 sh 3-5-3-1-2.sh
+sh 3-5-3-1-2.sh   >> /script/report.txt
 ret=$(sh 3-5-3-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1313,6 +1449,7 @@ else
 fi
 
 sh 3-5-3-1-3.sh
+sh 3-5-3-1-3.sh   >> /script/report.txt
 ret=$(sh 3-5-3-1-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1324,6 +1461,7 @@ else
 fi
 
 sh 3-5-3-2-1.sh
+sh 3-5-3-2-1.sh   >> /script/report.txt
 ret=$(sh 3-5-3-2-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1335,6 +1473,7 @@ else
 fi
 
 sh 3-5-3-2-3.sh
+sh 3-5-3-2-3.sh   >> /script/report.txt
 ret=$(sh 3-5-3-2-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1346,6 +1485,7 @@ else
 fi
 
 sh 3-5-3-2-4.sh
+sh 3-5-3-2-4.sh   >> /script/report.txt
 ret=$(sh 3-5-3-2-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1357,6 +1497,7 @@ else
 fi
 
 sh 3-5-3-3-1.sh
+sh 3-5-3-3-1.sh   >> /script/report.txt
 ret=$(sh 3-5-3-3-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1368,6 +1509,7 @@ else
 fi
 
 sh 3-5-3-3-3.sh
+sh 3-5-3-3-3.sh   >> /script/report.txt
 ret=$(sh 3-5-3-3-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1379,6 +1521,7 @@ else
 fi
 
 sh 3-5-3-3-4.sh
+sh 3-5-3-3-4.sh   >> /script/report.txt
 ret=$(sh 3-5-3-3-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1393,6 +1536,7 @@ echo -e "\n========== Section ${sno4}: ${s4} =========="
 echo -e "$ss15"
 
 sh 4-1-1-1.sh
+sh 4-1-1-1.sh   >> /script/report.txt
 ret=$(sh 4-1-1-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1404,6 +1548,7 @@ else
 fi
 
 sh 4-1-1-2.sh
+sh 4-1-1-2.sh   >> /script/report.txt
 ret=$(sh 4-1-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1415,6 +1560,7 @@ else
 fi
 
 sh 4-1-1-3.sh
+sh 4-1-1-3.sh   >> /script/report.txt
 ret=$(sh 4-1-1-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1426,6 +1572,7 @@ else
 fi
 
 sh 4-1-1-4.sh
+sh 4-1-1-4.sh   >> /script/report.txt
 ret=$(sh 4-1-1-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1437,6 +1584,7 @@ else
 fi
 
 sh 4-1-2-1.sh
+sh 4-1-2-1.sh   >> /script/report.txt
 ret=$(sh 4-1-2-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1448,6 +1596,7 @@ else
 fi
 
 sh 4-1-2-2.sh
+sh 4-1-2-2.sh   >> /script/report.txt
 ret=$(sh 4-1-2-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1459,6 +1608,7 @@ else
 fi
 
 sh 4-1-2-3.sh
+sh 4-1-2-3.sh   >> /script/report.txt
 ret=$(sh 4-1-2-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1470,6 +1620,7 @@ else
 fi
 
 sh 4-1-4.sh
+sh 4-1-4.sh   >> /script/report.txt
 ret=$(sh 4-1-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1481,6 +1632,7 @@ else
 fi
 
 sh 4-1-5.sh
+sh 4-1-5.sh   >> /script/report.txt
 ret=$(sh 4-1-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1492,6 +1644,7 @@ else
 fi
 
 sh 4-1-6.sh
+sh 4-1-6.sh   >> /script/report.txt
 ret=$(sh 4-1-6.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1503,6 +1656,7 @@ else
 fi
 
 sh 4-1-7.sh
+sh 4-1-7.sh   >> /script/report.txt
 ret=$(sh 4-1-7.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1514,6 +1668,7 @@ else
 fi
 
 sh 4-1-8.sh
+sh 4-1-8.sh   >> /script/report.txt
 ret=$(sh 4-1-8.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1525,6 +1680,7 @@ else
 fi
 
 sh 4-1-9.sh
+sh 4-1-9.sh   >> /script/report.txt
 ret=$(sh 4-1-9.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1536,6 +1692,7 @@ else
 fi
 
 sh 4-1-10.sh
+sh 4-1-10.sh   >> /script/report.txt
 ret=$(sh 4-1-10.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1547,6 +1704,7 @@ else
 fi
 
 sh 4-1-11.sh
+sh 4-1-11.sh   >> /script/report.txt
 ret=$(sh 4-1-11.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1558,6 +1716,7 @@ else
 fi
 
 sh 4-1-12.sh
+sh 4-1-12.sh   >> /script/report.txt
 ret=$(sh 4-1-12.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1569,6 +1728,7 @@ else
 fi
 
 sh 4-1-13.sh
+sh 4-1-13.sh   >> /script/report.txt
 ret=$(sh 4-1-13.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1580,6 +1740,7 @@ else
 fi
 
 sh 4-1-14.sh
+sh 4-1-14.sh   >> /script/report.txt
 ret=$(sh 4-1-14.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1591,6 +1752,7 @@ else
 fi
 
 sh 4-1-15.sh
+sh 4-1-15.sh   >> /script/report.txt
 ret=$(sh 4-1-15.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1602,6 +1764,7 @@ else
 fi
 
 sh 4-1-16.sh
+sh 4-1-16.sh   >> /script/report.txt
 ret=$(sh 4-1-16.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1613,6 +1776,7 @@ else
 fi
 
 sh 4-1-17.sh
+sh 4-1-17.sh   >> /script/report.txt
 ret=$(sh 4-1-17.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1625,6 +1789,7 @@ fi
 
 echo -e "\n$ss16"
 sh 4-2-1-1.sh
+sh 4-2-1-1.sh   >> /script/report.txt
 ret=$(sh 4-2-1-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1636,6 +1801,7 @@ else
 fi
 
 sh 4-2-1-2.sh
+sh 4-2-1-2.sh   >> /script/report.txt
 ret=$(sh 4-2-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1647,6 +1813,7 @@ else
 fi
 
 # sh 4-2-1-3.sh
+#sh 4-2-1-3.sh   >> /script/report.txt
 # ret=$(sh 4-2-1-3.sh)
 # ret=${ret::-4}
 # ret=${ret: -4}
@@ -1658,6 +1825,7 @@ fi
 # fi
 
 sh 4-2-1-4.sh
+sh 4-2-1-4.sh   >> /script/report.txt
 ret=$(sh 4-2-1-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1669,6 +1837,7 @@ else
 fi
 
 sh 4-2-1-5.sh
+sh 4-2-1-5.sh   >> /script/report.txt
 ret=$(sh 4-2-1-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1680,6 +1849,7 @@ else
 fi
 
 # sh 4-2-1-6.sh
+# sh 4-2-1-6.sh   >> /script/report.txt
 # ret=$(sh 4-2-1-6.sh)
 # ret=${ret::-4}
 # ret=${ret: -4}
@@ -1691,6 +1861,7 @@ fi
 # fi
 
 sh 4-2-2-1.sh
+sh 4-2-2-1.sh   >> /script/report.txt
 ret=$(sh 4-2-2-1.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1702,6 +1873,7 @@ else
 fi
 
 sh 4-2-2-2.sh
+sh 4-2-2-2.sh   >> /script/report.txt
 ret=$(sh 4-2-2-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1713,6 +1885,7 @@ else
 fi
 
 sh 4-2-2-3.sh
+sh 4-2-2-3.sh   >> /script/report.txt
 ret=$(sh 4-2-2-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1724,6 +1897,7 @@ else
 fi
 
 sh 4-2-3.sh
+sh 4-2-3.sh   >> /script/report.txt
 ret=$(sh 4-2-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1735,6 +1909,7 @@ else
 fi
 
 # sh 4-3.sh
+# sh 4-3.sh   >> /script/report.txt
 # ret=$(sh 4-3.sh)
 # ret=${ret::-4}
 # ret=${ret: -4}
@@ -1746,6 +1921,7 @@ fi
 # fi
 
 sh 4-4.sh
+sh 4-4.sh   >> /script/report.txt
 ret=$(sh 4-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1760,6 +1936,7 @@ echo -e "\n========== Section ${sno6}: ${s6} =========="
 echo -e "$ss24"
 
 sh 6-1-2.sh
+sh 6-1-2.sh   >> /script/report.txt
 ret=$(sh 6-1-2.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1771,6 +1948,7 @@ else
 fi
 
 sh 6-1-3.sh
+sh 6-1-3.sh   >> /script/report.txt
 ret=$(sh 6-1-3.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1782,6 +1960,7 @@ else
 fi
 
 sh 6-1-4.sh
+sh 6-1-4.sh   >> /script/report.txt
 ret=$(sh 6-1-4.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1793,6 +1972,7 @@ else
 fi
 
 sh 6-1-5.sh
+sh 6-1-5.sh   >> /script/report.txt
 ret=$(sh 6-1-5.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1804,6 +1984,7 @@ else
 fi
 
 sh 6-1-6.sh
+sh 6-1-6.sh   >> /script/report.txt
 ret=$(sh 6-1-6.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1815,6 +1996,7 @@ else
 fi
 
 sh 6-1-7.sh
+sh 6-1-7.sh   >> /script/report.txt
 ret=$(sh 6-1-7.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1826,6 +2008,7 @@ else
 fi
 
 sh 6-1-8.sh
+sh 6-1-8.sh   >> /script/report.txt
 ret=$(sh 6-1-8.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1837,6 +2020,7 @@ else
 fi
 
 sh 6-1-9.sh
+sh 6-1-9.sh   >> /script/report.txt
 ret=$(sh 6-1-9.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1848,6 +2032,7 @@ else
 fi
 
 sh 6-1-10.sh
+sh 6-1-10.sh   >> /script/report.txt
 ret=$(sh 6-1-10.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1859,6 +2044,7 @@ else
 fi
 
 sh 6-1-11.sh
+sh 6-1-11.sh   >> /script/report.txt
 ret=$(sh 6-1-11.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1870,6 +2056,7 @@ else
 fi
 
 sh 6-1-12.sh
+sh 6-1-12.sh   >> /script/report.txt
 ret=$(sh 6-1-12.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1881,6 +2068,7 @@ else
 fi
 
 # sh 6-1-13.sh
+# sh 6-1-13.sh   >> /script/report.txt
 # ret=$(sh 6-1-13.sh)
 # ret=${ret::-4}
 # ret=${ret: -4}
@@ -1892,6 +2080,7 @@ fi
 # fi
 
 # sh 6-1-14.sh
+# sh 6-1-14.sh   >> /script/report.txt
 # ret=$(sh 6-1-14.sh)
 # ret=${ret::-4}
 # ret=${ret: -4}
@@ -1903,6 +2092,7 @@ fi
 # fi
 
 # sh 6-1-15.sh
+# sh 6-1-15.sh   >> /script/report.txt
 # ret=$(sh 6-1-15.sh)
 # ret=${ret::-4}
 # ret=${ret: -4}
@@ -1914,6 +2104,7 @@ fi
 # fi
 
 # sh 6-1-16.sh
+# sh 6-1-16.sh   >> /script/report.txt
 # ret=$(sh 6-1-16.sh)
 # ret=${ret::-4}
 # ret=${ret: -4}
@@ -1925,6 +2116,7 @@ fi
 # fi
 
 # sh 6-1-17.sh
+# sh 6-1-17.sh   >> /script/report.txt
 # ret=$(sh 6-1-17.sh)
 # ret=${ret::-4}
 # ret=${ret: -4}
@@ -1938,11 +2130,6 @@ fi
 echo -e " \n"
 echo "Pass: ${pcount}"
 echo "Fail: ${fcount}"
-echo "1\t Section_1 \t ${fcount}" >> graphdata1.dat
-echo "2\t Section_2 \t ${fcount}" >> graphdata1.dat
-echo "3\t Section_3 \t ${fcount}" >> graphdata1.dat
-echo "4\t Section_4 \t ${fcount}" >> graphdata1.dat
-echo "5\t Section_5 \t ${fcount}" >> graphdata1.dat
 
 
 
@@ -1954,11 +2141,14 @@ s="Initial setup"
 ss1="1.1 Filesystem configuration"
 
 
+echo -e "\n"
+echo -e "This is the OS Name as well as the version $info \n"
 echo -e "========== Benchmark:CentOS ==============\n"
-echo -e "========== Section ${sno1}:${s1} ==========\n"
+echo -e "========== Section ${sno}:${s} ==========\n"
 echo -e "$ss1\n"
-sh 1-1-1-1.sh
-ret=$(sh 1-1-1-1.sh)
+sh 1-1-1-1CentOS.sh
+sh 1-1-1-1CentOS.sh   >> /script/report.txt
+ret=$(sh 1-1-1-1CentOS.sh)
 ret=${ret::-4}
 ret=${ret: -4}
 if [ "$ret" == "Pass" ]
@@ -1967,8 +2157,9 @@ then
 else
         fcount=$((fcount+1))
 fi
-sh 1-1-1-2.sh
-ret=$(sh 1-1-1-2.sh)
+sh 1-1-1-2CentOS.sh
+sh 1-1-1-2CentOS.sh   >> /script/report.txt
+ret=$(sh 1-1-1-2CentOS.sh)
 ret=${ret::-4}
 ret=${ret: -4}
 if [ "$ret" == "Pass" ]
@@ -1977,6 +2168,44 @@ then
 else
         fcount=$((fcount+1))
 fi
+
+sh 1-1-1-3CentOS.sh
+sh 1-1-1-3CentOS.sh   >> /script/report.txt
+ret=$(sh 1-1-1-3CentOS.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+
+sh 1-1-2-1CentOS.sh
+sh 1-1-2-1CentOS.sh   >> /script/report.txt
+ret=$(sh 1-1-2-1CentOS.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+
+sh 1-1-2-2CentOS.sh
+sh 1-1-2-2CentOS.sh   >> /script/report.txt
+ret=$(sh 1-1-2-2CentOS.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+
+
 echo "Pass: ${pcount}"
 echo "Fail: ${fcount}"
 
@@ -1986,12 +2215,15 @@ s="Initial setup"
 ss1="1.1 Filesystem configuration"
 
 
+echo -e "\n"
+echo -e "This is the OS Name as well as the version $info \n"
 echo -e "========== Benchmark:Debian ==============\n"
-echo -e "========== Section ${sno1}:${s1} ==========\n"
+echo -e "========== Section ${sno}:${s} ==========\n"
 echo -e "$ss1\n"
 
-sh 1-1-1-1.sh
-ret=$(sh 1-1-1-1.sh)
+sh 1-1-1-1Debian.sh
+sh 1-1-1-1Debian.sh  >> /script/report.txt
+ret=$(sh 1-1-1-1Debian.sh)
 ret=${ret::-4}
 ret=${ret: -4}
 if [ "$ret" == "Pass" ]
@@ -2000,8 +2232,10 @@ then
 else
         fcount=$((fcount+1))
 fi
-sh 1-1-1-2.sh
-ret=$(sh 1-1-1-2.sh)
+
+sh 1-1-1-2Debian.sh
+sh 1-1-1-2Debian.sh  >> /script/report.txt
+ret=$(sh 1-1-1-2Debian.sh)
 ret=${ret::-4}
 ret=${ret: -4}
 if [ "$ret" == "Pass" ]
@@ -2010,6 +2244,41 @@ then
 else
         fcount=$((fcount+1))
 fi
+
+sh 1-1-1-3Debian.sh
+sh 1-1-1-3Debian.sh  >> /script/report.txt
+ret=$(sh 1-1-1-3Debian.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+sh 1-1-1-4Debian.sh
+sh 1-1-1-4Debian.sh  >> /script/report.txt
+ret=$(sh 1-1-1-4Debian.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+sh 1-1-1-5Debian.sh
+sh 1-1-1-5Debian.sh  >> /script/report.txt
+ret=$(sh 1-1-1-5Debian.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+
 echo "Pass: ${pcount}"
 echo "Fail: ${fcount}"
 
@@ -2017,9 +2286,10 @@ else
 s="Initial setup"
 ss1="1.1 Filesystem configuration"
 
-
+echo -e "\n"
+echo -e "This is the OS Name as well as the version $info \n"
 echo -e "========== Benchmark:Fedora ==============\n"
-echo -e "========== Section ${sno1}:${s1} ==========\n"
+echo -e "========== Section ${sno}:${s} ==========\n"
 echo -e "$ss1\n"
 
 sh 1-1-1-1.sh
@@ -2042,12 +2312,7 @@ then
 else
         fcount=$((fcount+1))
 fi
-
-
 echo "Pass: ${pcount}"
-echo "Fail: ${fcount}"
-
-fi
 echo "Fail: ${fcount}"
 
 fi
