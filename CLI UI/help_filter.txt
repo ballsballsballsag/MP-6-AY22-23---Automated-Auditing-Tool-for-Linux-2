@@ -1,0 +1,15 @@
+Use 1 to search for Pass
+
+Use 2 to search for Fail
+ 
+Use 3 to search for Section 1 only
+
+Use 4 to search for Section 2 only
+
+Use 5 to search for Section 3 only
+
+Use 6 to search for Section 4 only
+
+Use 7 to search for Section 5 only
+
+Use 8 to search for Section 6 only
