@@ -1,0 +1,8 @@
+Question: Why does the audit tool not work on my device?
+
+Answer: Firstly, is your system running Linux? Secondly, are you running the audit command with root or sudo priviledges?
+Thirdly, are the all the scripts for example 1-1-1-1.sh in the current directory of where your ran the audit command?
+
+Question: How do I change directory to where the scripts are located at?
+
+Answer: Use the command "cd" followed by a space and the script's location. For example "cd /script/"
