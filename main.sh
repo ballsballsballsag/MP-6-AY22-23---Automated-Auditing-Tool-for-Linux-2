@@ -66,10 +66,13 @@ ss25="6.2 User and Group settings"
 
 echo -e "\n"
 echo -e "This is the OS Name as well as the version $info \n"
+echo -e "Time when benchmarking was done $timing \n"
 echo -e "Time when benchmarking was done $timing \n" >> /script/report.txt
+echo -e "========== Benchmark:Ubuntu ==========\n"
 echo -e "========== Benchmark:Ubuntu ==========\n" >> /script/report.txt
-echo -e "========== Section ${sno}: ${s} ==========\n" >> /script/report.txt
-echo -e "$ss1\n" >> /script/report.txt
+echo -e "========== Section ${sno1}: ${s1} ==========\n" 
+echo -e "========== Section ${sno1}: ${s1} ==========\n" >> /script/report.txt
+echo -e "$ss1\n" 
 
 
 sh 1-1-1-1.sh 
@@ -1822,6 +1825,7 @@ echo -e "$ss19"
 
 
 sh 5-1-1script.sh
+sh 5-1-1script.sh >> /script/report.txt
 ret=$(sh 5-1-1script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1837,6 +1841,7 @@ else
 fi
 
 sh 5-1-2script.sh
+sh 5-1-2script.sh >> /script/report.txt
 ret=$(sh 5-1-2script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1851,6 +1856,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-1-3script.sh
+sh 5-1-3script.sh >> /script/report.txt
 ret=$(sh 5-1-3script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1865,6 +1871,7 @@ else
 	echo $exportcontent >> section5.csv
 fi
 sh 5-1-4script.sh
+sh 5-1-4script.sh >> /script/report.txt
 ret=$(sh 5-1-4script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1879,6 +1886,7 @@ else
 	echo $exportcontent >> section5.csv
 fi
 sh 5-1-5script.sh
+sh 5-1-5script.sh >> /script/report.txt
 ret=$(sh 5-1-5script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1893,6 +1901,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-1-6script.sh
+sh 5-1-6script.sh >> /script/report.txt
 ret=$(sh 5-1-6script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1907,6 +1916,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-1-7script.sh
+sh 5-1-7script.sh >> /script/report.txt
 ret=$(sh 5-1-7script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1921,6 +1931,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-1-8script.sh
+sh 5-1-8script.sh >> /script/report.txt
 ret=$(sh 5-1-8script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1935,6 +1946,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-1-9script.sh
+sh 5-1-9script.sh >> /script/report.txt
 ret=$(sh 5-1-9script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1952,6 +1964,7 @@ fi
 echo -e "\n$ss20"
 
 sh 5-2-1script.sh
+sh 5-2-1script.sh >> /script/report.txt
 ret=$(sh 5-2-1script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1966,6 +1979,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-2-2script.sh
+sh 5-2-2script.sh >> /script/report.txt
 ret=$(sh 5-2-2script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1980,6 +1994,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-2-3script.sh
+sh 5-2-3script.sh >> /script/report.txt
 ret=$(sh 5-2-3script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -1998,6 +2013,7 @@ if [ "$sshinstalled" == *"openssh-server"* ]
 then
 	echo $ss3
 	sh 5-3-1script.sh
+	sh 5-3-1script.sh >> /script/report.txt
 	ret=$(sh 5-3-1script.sh)
 	ret=${ret::-4}
 	ret=${ret: -4}
@@ -2020,6 +2036,7 @@ fi
 echo -e "\n$ss21"
 
 sh 5-4-1script.sh
+sh 5-4-1script.sh >> /script/report.txt
 ret=$(sh 5-4-1script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2034,6 +2051,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-4-2script.sh
+sh 5-4-1script.sh >> /script/report.txt
 ret=$(sh 5-4-2script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2048,6 +2066,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-4-3script.sh
+sh 5-4-3script.sh >> /script/report.txt
 ret=$(sh 5-4-3script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2062,6 +2081,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-4-4script.sh
+sh 5-4-4script.sh >> /script/report.txt
 ret=$(sh 5-4-4script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2080,6 +2100,7 @@ echo -e "\n$ss22"
 echo -e "\n$ss22a"
 
 bash 5-5-1-1script.sh
+bash 5-5-1-1script.sh >> /script/report.txt
 ret=$(bash 5-5-1-1script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2094,6 +2115,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 bash 5-5-1-2script.sh
+bash 5-5-1-2script.sh >> /script/report.txt
 ret=$(bash 5-5-1-2script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2108,6 +2130,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 bash 5-5-1-3script.sh
+bash 5-5-1-3script.sh >> /script/report.txt
 ret=$(bash 5-5-1-3script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2122,6 +2145,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 bash 5-5-1-4script.sh
+bash 5-5-1-4script.sh >> /script/report.txt
 ret=$(bash 5-5-1-4script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2136,6 +2160,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 bash 5-5-1-5script.sh
+bash 5-5-1-5script.sh >> /script/report.txt
 ret=$(bash 5-5-1-5script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2150,6 +2175,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 bash 5-5-2script.sh
+bash 5-5-2script.sh >> /script/report.txt
 ret=$(bash 5-5-2script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2164,6 +2190,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-5-3script.sh
+bash 5-5-3script.sh >> /script/report.txt
 ret=$(sh 5-5-3script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2178,6 +2205,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-5-4script.sh
+bash 5-5-4script.sh >> /script/report.txt
 ret=$(sh 5-5-4script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2192,6 +2220,7 @@ else
         echo $exportcontent >> section5.csv
 fi
 sh 5-5-5script.sh
+bash 5-5-5script.sh >> /script/report.txt
 ret=$(sh 5-5-5script.sh)
 ret=${ret::-4}
 ret=${ret: -4}
@@ -2636,9 +2665,11 @@ ss1="1.1 Filesystem configuration"
 
 echo -e "\n"
 echo -e "This is the OS Name as well as the version $info \n"
-echo -e "========== Benchmark:CentOS ==============\n"
-echo -e "========== Section ${sno}:${s} ==========\n"
+echo -e "Time when benchmarking was done $timing \n" >> /script/report.txt
+echo -e "========== Benchmark:CentOS ==============\n" >> /script/report.txt
+echo -e "========== Section ${sno}:${s} ==========\n" >> /script/report.txt
 echo -e "$ss1\n"
+
 sh 1-1-1-1CentOS.sh
 sh 1-1-1-1CentOS.sh   >> /script/report.txt
 ret=$(sh 1-1-1-1CentOS.sh)
