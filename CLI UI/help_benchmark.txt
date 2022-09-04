@@ -1,0 +1,5 @@
+Use 1 to do level 1 - Server/Workstation benchmarking
+
+Use 2 to do level 2 - Server/Workstation benchmarking
+
+Use 3 to do a complete benchmarking
