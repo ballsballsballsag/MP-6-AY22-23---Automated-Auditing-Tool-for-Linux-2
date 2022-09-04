@@ -25,8 +25,13 @@ grep Fail /script/report.txt
 
 elif [ "$option" = 3 ]
 then
-echo "User wants to search for: Section 1.1"
-grep 1.1 /script/report.txt
+echo "User wants to search for: Level 1 benchmarks"
+cat /script/report_lvl1.txt
+
+elif [ "$option" = 4 ]
+then
+echo "User wants to search for: Level 2 benchmarks"
+cat /script/report_lvl2.txt
 
 elif [ "$option" = "$help" ]
 then
