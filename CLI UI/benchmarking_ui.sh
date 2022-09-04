@@ -1,6 +1,6 @@
 
 
-echo  "Hello, which part of the level of benchmarking would u like to do today? \n Use -h to change the benchmarking level "
+echo  "Hello, which part of the level of benchmarking would u like to do today? \nUse -h to change the benchmarking level "
 read option
 help="-h"
 #file="/script/report.txt"
