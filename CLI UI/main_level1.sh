@@ -6,7 +6,7 @@ third="Debian"
 fourth="Fedora"
 info=$(lsb_release -a)
 timing=$(timedatectl | head -4)
-removal=$(rm /script/report_lvl1.txt)
+removal=$(rm /script/report_lvl1.txt 2> /dev/null)
 
 if [ "$OS" = "$first" ]
 
