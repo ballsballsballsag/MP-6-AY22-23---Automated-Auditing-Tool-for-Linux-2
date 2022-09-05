@@ -259,8 +259,31 @@ fi
 
 echo -e "$ss16"
 echo -e "$ss16"  >> /script/report_lvl2.txt
-#needs 4-1-2-1.sh
-#needs 4-1-2-2.sh
+
+sh 4-1-2-1.sh
+sh 4-1-2-1.sh   >> /script/report_lvl2.txt
+ret=$(sh 4-1-2-1.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+
+sh 4-1-2-2.sh
+sh 4-1-2-2.sh   >> /script/report_lvl2.txt
+ret=$(sh 4-1-2-2.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+
 sh 4-1-2-3.sh
 sh 4-1-2-3.sh   >> /script/report_lvl2.txt
 ret=$(sh 4-1-2-3.sh)
@@ -273,7 +296,18 @@ else
         fcount=$((fcount+1))
 fi
 
-# needs sh 4-1-3.sh
+sh 4-1-3.sh
+sh 4-1-2-3.sh   >> /script/report_lvl2.txt
+ret=$(sh 4-1-2-3.sh)
+ret=${ret::-4}
+ret=${ret: -4}
+if [ "$ret" == "Pass" ]
+then
+        pcount=$((pcount+1))
+else
+        fcount=$((fcount+1))
+fi
+
 sh 4-1-4.sh
 sh 4-1-4.sh   >> /script/report_lvl2.txt
 ret=$(sh 4-1-4.sh)
