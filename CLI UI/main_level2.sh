@@ -6,7 +6,10 @@ third="Debian"
 fourth="Fedora"
 info=$(lsb_release -a)
 timing=$(timedatectl | head -4)
-removal=$(rm /script/report_lvl2.txt 2> /dev/null)
+removal=$(rm report_lvl2.txt >2 /dev/null)
+creation=$(touch report_lvl2.txt)
+authorized=$(sudo chmod 400 report_lvl2.txt)
+
 
 if [ "$OS" = "$first" ]
 
