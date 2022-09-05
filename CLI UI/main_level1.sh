@@ -7,6 +7,9 @@ fourth="Fedora"
 info=$(lsb_release -a)
 timing=$(timedatectl | head -4)
 removal=$(rm /script/report_lvl1.txt 2> /dev/null)
+creation=$(touch /script/report_lvl1.txt)
+authorized=$(sudo chmod 400 /script/report_lvl1.txt)
+
 
 if [ "$OS" = "$first" ]
 
