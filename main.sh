@@ -3,7 +3,7 @@ OS=$(cat /etc/os-release | grep PRETTY_NAME | cut -b 14-19)
 first="Ubuntu"
 second="CentOS"
 third="Debian"
-fourth="Fedora"
+
 info=$(lsb_release -a)
 timing=$(timedatectl | head -4)
 removal=$(rm /script/report.txt 2> /dev/null) 
@@ -2830,36 +2830,37 @@ echo "Pass: ${pcount}"
 echo "Fail: ${fcount}"
 
 else
-s="Initial setup"
-ss1="1.1 Filesystem configuration"
+echo "The linux you are running is not supported yet"
+#s="Initial setup"
+#ss1="1.1 Filesystem configuration"
 
-echo -e "\n"
-echo -e "This is the OS Name as well as the version $info \n"
-echo -e "========== Benchmark:Fedora ==============\n"
-echo -e "========== Section ${sno}:${s} ==========\n"
-echo -e "$ss1\n"
+#echo -e "\n"
+#echo -e "This is the OS Name as well as the version $info \n"
+#echo -e "========== Benchmark:Fedora ==============\n"
+#echo -e "========== Section ${sno}:${s} ==========\n"
+#echo -e "$ss1\n"
 
-sh 1-1-1-1.sh
-ret=$(sh 1-1-1-1.sh)
-ret=${ret::-4}
-ret=${ret: -4}
-if [ "$ret" == "Pass" ]
-then
-        pcount=$((pcount+1))
-else
-        fcount=$((fcount+1))
-fi
-sh 1-1-1-2.sh
-ret=$(sh 1-1-1-2.sh)
-ret=${ret::-4}
-ret=${ret: -4}
-if [ "$ret" == "Pass" ]
-then
-        pcount=$((pcount+1))
-else
-        fcount=$((fcount+1))
-fi
-echo "Pass: ${pcount}"
-echo "Fail: ${fcount}"
+#sh 1-1-1-1.sh
+#ret=$(sh 1-1-1-1.sh)
+#ret=${ret::-4}
+#ret=${ret: -4}
+#if [ "$ret" == "Pass" ]
+#then
+#        pcount=$((pcount+1))
+#else
+#        fcount=$((fcount+1))
+#fi
+#sh 1-1-1-2.sh
+#ret=$(sh 1-1-1-2.sh)
+#ret=${ret::-4}
+#ret=${ret: -4}
+#if [ "$ret" == "Pass" ]
+#then
+#        pcount=$((pcount+1))
+#else
+#        fcount=$((fcount+1))
+#fi
+#echo "Pass: ${pcount}"
+#echo "Fail: ${fcount}"
 
-fi
+#fi
