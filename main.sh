@@ -2834,6 +2834,8 @@ echo "Fail: ${fcount}"
 
 else
 echo "The linux you are running is not supported yet"
+
+fi
 #s="Initial setup"
 #ss1="1.1 Filesystem configuration"
 
