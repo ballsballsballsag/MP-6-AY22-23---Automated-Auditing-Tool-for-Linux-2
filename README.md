@@ -18,4 +18,4 @@ CIS is acknowledged throughout the world because it does not adhere to a nationa
 3. Ensure that a directory called 'script' is created
 
 ## How a script that ran successfully should look like
-(https://youtu.be/bQWgk8ThTV0)
+Successful audit run: https://youtu.be/bQWgk8ThTV0
