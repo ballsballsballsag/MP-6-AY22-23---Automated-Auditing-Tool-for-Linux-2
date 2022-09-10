@@ -1,0 +1,7 @@
+Use 1 to search for automated benchmarking every 3 months
+
+Use 2 to search for automated benchmarking every 6 months
+
+Use 3 to search for automated benchmarking every 9 months
+
+Use 4 to search for automated benchmarking every 12 months
