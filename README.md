@@ -15,7 +15,7 @@ CIS is acknowledged throughout the world because it does not adhere to a nationa
 ## Prerequisites needed to run the scripts
 1. Ensure that [gnumeric](https://www.unixmen.com/install-gnumeric-1-12-23-on-ubuntu-15-04/) is installed 
 2. Ensure that auditors are running the script as root 
-3. Ensure that a directory called 'script' is created
+3. Ensure that a directory called '/script/' is created
 
 ## How a script that ran successfully should look like
 Successful audit run: https://youtu.be/bQWgk8ThTV0
