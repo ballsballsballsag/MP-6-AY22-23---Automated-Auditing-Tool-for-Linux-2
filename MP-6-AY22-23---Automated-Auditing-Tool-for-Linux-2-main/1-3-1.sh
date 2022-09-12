@@ -7,22 +7,20 @@ auditname="Ensure AIDE is installed"
 #cmd1=$(dpkg-query -l | grep aide)
 #cmd2=$(dpkg-query -l | grep aide-common)
 
-cmd=$(dpkg-query -l | grep aide | cut -d " " -f 3 > aide.txt)
-first=$(cat aide.txt | head -n 1)
-second=$(cat aide.txt | tail -n 1)
-result1="aide"
-result2="aide-common"
+cmd=$(dpkg -s aide 2> /dev/null | grep -E '(Status:|not installed)' 2> /dev/null)
+cmd1=$(dpkg -s aide-common 2> /dev/null | grep -E '(Status:|not installed)' 2> /dev/null)
 
 
 
 
-if [ "$first" = "$result1" ] && [ "$second" = "$result2" ]
+
+if [ ! -z "$cmd" ] && [ ! -z "$cmd1" ]
 then
-	auditres="\033[32mPass\033[m"
+        auditres="\033[32mPass\033[m"
 
 
 else
-	auditres="\033[31mFail\033[m"
+        auditres="\033[31mFail\033[m"
 
 
 fi
