@@ -17,4 +17,4 @@ else
         auditres="\033[31mFail\033[m"
 
 fi
-echo "${auditno} \t${auditname} \t\t\t[${auditres}]"
+echo "${auditno} \t${auditname} \t\t\t\t[${auditres}]"
