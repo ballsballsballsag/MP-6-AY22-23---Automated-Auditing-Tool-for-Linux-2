@@ -2,7 +2,5 @@ Use 1 to search for Pass
 
 Use 2 to search for Fail
  
-Use 3 to search for Level 1 benchmarking
 
-Use 4 to search for Level 2 benchmarking
 
