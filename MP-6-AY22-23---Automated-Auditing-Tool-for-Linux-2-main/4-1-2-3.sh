@@ -4,9 +4,9 @@ section=4
 auditNo="4.1.2.3"
 auditName="Ensure system is disabled when audit logs are full"
 
-cmd1=$(grep space_left_action /etc/audit/auditd.conf)
-cmd2=$(grep action_mail_acct /etc/audit/auditd.conf)
-cm3=$(grep admin_space_left_action /etc/audit/auditd.conf)
+cmd1=$(grep space_left_action /etc/audit/auditd.conf 2> \dev\null)
+cmd2=$(grep action_mail_acct /etc/audit/auditd.conf 2> \dev\null)
+cm3=$(grep admin_space_left_action /etc/audit/auditd.conf 2> \dev\null)
 auditres="\033[31mFail\033[m"
 correct1="space_left_action = email"
 correct2="action_mail_acct = root"
