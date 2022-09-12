@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo -e "Hello, welcome to Group 6 MP Project.\n Press 1 to run linux benchmarking.\n Press 2 to show graph based on the result from the benchmarking.\n Press 3 to show more information regarding the tool\n Press 4 for the search option\n Use -h for the help menu"
+echo -e "Hello, welcome to Group 6 MP Project.\n Press 1 to run linux benchmarking.\n Press 2 to show graph based on the result from the benchmarking.\n Press 3 to show more information regarding the tool\n Press 4 for the search option\n Press 5 for the automated benchmarking \nUse -h for the help menu"
 read option
 echo "User picked option:$option"
 help="-h"
@@ -22,6 +22,11 @@ elif [ "$option" = 4 ]
 then
 
 sh /script/filter.sh
+
+elif [ "$option" = 5 ]
+then
+
+sh /script/jobs.sh
 
 
 
