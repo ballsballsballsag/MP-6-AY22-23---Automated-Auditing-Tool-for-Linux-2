@@ -3,8 +3,8 @@ section=1
 auditno="1.1.1.2"
 auditname="Ensure mounting of jff2s filesystem is diabled"
 
-cmd=$(/usr/sbin/modprobe -n -v jff2s | grep -E '(jff2s|install)')
-cmd1=$(lsmod | grep jff2s)
+cmd=$(/usr/sbin/modprobe -n -v jff2s 2> /dev/null | grep -E '(jff2s|install)')
+cmd1=$(lsmod | grep jff2s 2> /dev/null)
 correct="install /bin/true "
 
 
