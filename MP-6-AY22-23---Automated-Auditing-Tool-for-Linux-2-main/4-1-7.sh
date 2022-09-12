@@ -14,4 +14,4 @@ then
 auditres="\033[32mPass\033[m"
 fi
 
-echo "${auditNo} \t\t${auditName} \t[${auditres}]"
+echo "${auditNo} \t\t${auditName} \t\t\t\t\t\t\t[${auditres}]"
