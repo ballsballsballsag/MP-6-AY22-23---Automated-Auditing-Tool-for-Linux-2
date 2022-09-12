@@ -3,9 +3,9 @@ section=1
 auditno="1.1.23"
 auditname="Disable Automounting"
 
-cmd1=$(systemctl is-enabled autofs)
+cmd1=$(systemctl is-enabled autofs 2> /dev/null)
 correct1="disabled"
-cmd2=$(dpkg-query -l | grep autofs)
+cmd2=$(dpkg-query -l 2> /dev/null | grep autofs 2> /dev/null)
 #cmd3=`findmnt -n /tmp | cut -b 8-15`
 #correct3="/dev/sda"
 
