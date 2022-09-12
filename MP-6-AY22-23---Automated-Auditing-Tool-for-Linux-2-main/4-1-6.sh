@@ -5,7 +5,7 @@ auditNo="4.1.6"
 auditName="Ensure events that modify the system's Mandatory Access Controls are collected"
 
 cmd1=$(grep MAC-policy /etc/audit/rules.d/*.rules)
-cmd2=$(auditctl -l | grep MAC-policy)
+cmd2=$(auditctl -l 2> \dev\null | grep MAC-policy)
 auditres="\033[31mFail\033[m"
 correct1="-w /etc/apparmor/ -p wa -k MAC-policy -w /etc/apparmor.d/ -p wa -k MAC-policy"
 correct2="-w /etc/apparmor/ -p wa -k MAC-policy -w /etc/apparmor.d/ -p wa -k MAC-policy"
