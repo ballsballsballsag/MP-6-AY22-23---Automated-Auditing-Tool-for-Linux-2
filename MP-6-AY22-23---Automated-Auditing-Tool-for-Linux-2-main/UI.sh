@@ -7,7 +7,8 @@ help="-h"
 
 if [ "$option" = 1 ]
 then
-bash /script/main.sh
+sh /script/benchmarking_ui.sh
+#bash /script/main.sh
 
 elif [ "$option" = 2 ]
 then
