@@ -15,7 +15,7 @@ awk -F: '($1!~/(halt|sync|shutdown)/ && $7!~/^(\/usr)?\/sbin\/nologin(\/)?$/ && 
 	fi 
 done
 
-cmd= $(grep User 6-2-6-output.txt)
+cmd= $(grep User 6-2-6-output.txt | 2> \dev\null)
 
 if  [ -z "$cmd" ]
 then
