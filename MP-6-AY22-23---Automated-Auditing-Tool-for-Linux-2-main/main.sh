@@ -6,6 +6,9 @@ third="Debian"
 
 info=$(lsb_release -a)
 timing=$(timedatectl | head -4)
+info=$(lsb_release -a) >> /script/report.txt
+timing=$(timedatectl | head -4) >> /script/report.txt
+
 removal=$(rm /script/report.txt 2> /dev/null) 
 creation=$(touch /script/report.txt)
 authorized=$(sudo chmod 400 /script/report.txt)
