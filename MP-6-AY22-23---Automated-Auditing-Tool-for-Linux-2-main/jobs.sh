@@ -14,6 +14,7 @@ help="-h"
 
 if [ "$option" = 1 ]
 then
+crontab -r
 crontab -l > 3monthcron
 
 echo "0 0 1 */3 * /script/main.sh" >> 3monthcron
@@ -23,6 +24,7 @@ crontab 3monthcron
 
 elif [ "$option" = 2 ]
 then
+crontab -r
 crontab -l > 6monthcron
 
 echo "0 0 1 */6 * /script/main.sh" >> 6monthcron
@@ -32,6 +34,7 @@ crontab 6monthcron
 
 elif [ "$option" = 3 ]
 then
+crontab -r
 crontab -l > 9monthcron
 
 echo "0 0 1 */9 * /script/main.sh" >> 9monthcron
@@ -42,6 +45,7 @@ crontab 9monthcron
 
 elif [ "$option" = 4 ]
 then
+crontab -r
 crontab -l > yearlycron
 
 echo "0 0 1 1 * /script/main.sh" >> yearlycron
