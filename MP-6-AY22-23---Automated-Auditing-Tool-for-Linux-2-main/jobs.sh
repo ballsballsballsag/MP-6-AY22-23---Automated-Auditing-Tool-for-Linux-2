@@ -1,6 +1,6 @@
 
 
-echo  "Hello, at which intervals of the year would you like the benchmark to run automatically?\nUse -h for the help option "
+echo  "Hello, at which intervals of the year would you like the benchmark to run automatically?\nUse -h for the help option\nEnsure that the command crontab -u <user> -e has been ran before running this service."
 read option
 help="-h"
 
