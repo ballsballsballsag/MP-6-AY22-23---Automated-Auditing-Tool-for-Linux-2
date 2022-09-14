@@ -1601,18 +1601,6 @@ else
         fcount=$((fcount+1))
 fi
 
-sh 4-1-10.sh
-sh 4-1-10.sh   >> /script/report.txt
-ret=$(sh 4-1-10.sh)
-ret=${ret::-4}
-ret=${ret: -4}
-if [ "$ret" == "Pass" ]
-then
-        pcount=$((pcount+1))
-else
-        fcount=$((fcount+1))
-fi
-
 sh 4-1-11.sh
 sh 4-1-11.sh   >> /script/report.txt
 ret=$(sh 4-1-11.sh)
@@ -2360,18 +2348,6 @@ fi
 sh 6-1-9.sh
 sh 6-1-9.sh   >> /script/report.txt
 ret=$(sh 6-1-9.sh)
-ret=${ret::-4}
-ret=${ret: -4}
-if [ "$ret" == "Pass" ]
-then
-        pcount=$((pcount+1))
-else
-        fcount=$((fcount+1))
-fi
-
-sh 6-1-10.sh
-sh 6-1-10.sh   >> /script/report.txt
-ret=$(sh 6-1-10.sh)
 ret=${ret::-4}
 ret=${ret: -4}
 if [ "$ret" == "Pass" ]
