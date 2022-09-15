@@ -1,9 +1,14 @@
 Use 1 to search for automated benchmarking every 3 months
+(1/10/2022, 1/1/2023, 1/4/2023, 1/7/2023, 1/10/2023)
 
 Use 2 to search for automated benchmarking every 6 months
+(1/1/2023, 1/7/2023, 1/1/2024, 1/7/2024, 1/1/2025)
 
 Use 3 to search for automated benchmarking every 9 months
+(1/10/2022, 1/1/2023, 1/10/2023, 1/1/2024, 1/10/2024)
 
 Use 4 to search for automated benchmarking every 12 months
+(1/1/2023, 1/1/2024, 1/1/2025, 1/1/2026, 1/1/2027)
 
-Use the command crontab -e to remove any unwanted cron entries 
+Use the command crontab -e to remove any unwanted cron entries
+
