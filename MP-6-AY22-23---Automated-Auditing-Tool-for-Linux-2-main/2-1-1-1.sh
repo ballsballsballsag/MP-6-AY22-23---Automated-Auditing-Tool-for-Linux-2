@@ -3,9 +3,9 @@ section=2
 auditno="2.1.1.1"
 auditname="Ensure time synchronization is in use"
 
-cmd=$(systemctl is-enabled systemd-timesyncd)
-cmd1=$(dpkg -s chrony | grep 2> \dev\null)
-cmd2=$(dpkg -s ntp | grep 2> \dev\null)
+cmd=$(systemctl is-enabled systemd-timesyncd 2> \dev\null)
+cmd1=$(dpkg -s chrony 2> \dev\null)
+cmd2=$(dpkg -s ntp 2> \dev\null)
 correct="enabled"
 correct1=""
 correct2=""
