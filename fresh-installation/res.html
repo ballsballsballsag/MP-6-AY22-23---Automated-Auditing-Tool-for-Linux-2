@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<body>
+<h1>Audit Results Overview<h1>
+<style>
+a {
+display:inline-block;
+}
+div {
+display: inline-block;
+}
+</style>
+<div><a id="piechart1"><a id="piechart2"><a id="piechart3"><a id="piechart4"><a id="piechart5"><a id="piechart6"></div>
+<div id ="piechart7"></div>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+google.charts.load('current', {'packages':['corechart']});
+google.charts.setOnLoadCallback(drawChart);
+function drawChart() {
+	var data1 = google.visualization.arrayToDataTable([
+['Audit', 'Status'],
+['Pass', 21],
+['Fail', 27]])
+var data2 = google.visualization.arrayToDataTable([
+['Audit', 'Status'],
+['Pass', 12],
+['Fail', 11]])
+var data3 = google.visualization.arrayToDataTable([
+['Audit', 'Status'],
+['Pass', 9],
+['Fail', 29]])
+var data4 = google.visualization.arrayToDataTable([
+['Audit', 'Status'],
+['Pass', 9],
+['Fail', 18]])
+var data5 = google.visualization.arrayToDataTable([
+['Audit', 'Status'],
+['Pass', 5],
+['Fail', 20]])
+var data6 = google.visualization.arrayToDataTable([
+['Audit', 'Status'],
+['Pass', 23],
+['Fail', 4]])
+var data7 = google.visualization.arrayToDataTable([
+['Audit', 'Status'],
+['Pass', 79],
+['Fail', 109]]);
+var options1 = {'title':'Section 1', 'width':300, 'height':300};
+var options2 = {'title':'Section 2', 'width':300, 'height':300};
+var options3 = {'title':'Section 3', 'width':300, 'height':300};
+var options4 = {'title':'Section 4', 'width':300, 'height':300};
+var options5 = {'title':'Section 5', 'width':300, 'height':300};
+var options6 = {'title':'Section 6', 'width':300, 'height':300};
+var options7 = {'title':'Overall', 'width':500, 'height':400};
+	var chart = new google.visualization.PieChart(document.getElementById('piechart1'));
+  chart.draw(data1, options1);
+	var chart = new google.visualization.PieChart(document.getElementById('piechart2'));
+  chart.draw(data2, options2);
+	var chart = new google.visualization.PieChart(document.getElementById('piechart3'));
+  chart.draw(data3, options3);
+	var chart = new google.visualization.PieChart(document.getElementById('piechart4'));
+  chart.draw(data4, options4);
+	var chart = new google.visualization.PieChart(document.getElementById('piechart5'));
+  chart.draw(data5, options5);
+	var chart = new google.visualization.PieChart(document.getElementById('piechart6'));
+  chart.draw(data6, options6);
+	var chart = new google.visualization.PieChart(document.getElementById('piechart7'));
+  chart.draw(data7, options7);
+}
+</script>
+</body>
+</html>
