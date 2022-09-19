@@ -3,7 +3,7 @@ section=2
 auditno="2.1.9"
 auditname="Ensure FTP Server is not installed"
 
-cmd=$(dpkg-query -l | grep vsftpd)
+cmd=$(dpkg-query -l | grep vsftpd | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

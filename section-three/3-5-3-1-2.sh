@@ -3,7 +3,7 @@ section=3
 auditno="3.5.3.1.2"
 auditname="Ensure nftables is not installed with iptables"
 
-cmd=$(dpkg-query -l | grep nftables)
+cmd=$(dpkg-query -l | grep nftables | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

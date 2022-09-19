@@ -3,7 +3,7 @@ section=2
 auditno="2.1.2"
 auditname="Ensure X Window System is not installed"
 
-cmd=$(dpkg -l xserver-xorg*)
+cmd=$(dpkg -l xserver-xorg*| grep 2> \dev\null)
 correct=""
 
 if [ "$cmd" = "$correct" ]

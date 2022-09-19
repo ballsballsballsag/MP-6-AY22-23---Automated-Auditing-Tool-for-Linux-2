@@ -3,7 +3,7 @@ section=2
 auditno="2.1.3"
 auditname="Ensure Avahi Server is not installed"
 
-cmd=$(dpkg -s avahi-daemon | grep -E '(Status:|not installed)')
+cmd=$(dpkg -s avahi-daemon | grep -E '(Status:|not installed)' | grep 2> \dev\null)
 correct=" "
 
 if [ "$cmd" = "$correct" ]

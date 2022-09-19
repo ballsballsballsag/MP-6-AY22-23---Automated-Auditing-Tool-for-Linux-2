@@ -3,7 +3,7 @@ section=2
 auditno="2.1.4"
 auditname="Ensure CUPS is not installed"
 
-cmd=$(dpkg-query -l | grep cups)
+cmd=$(dpkg-query -l | grep cups | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

@@ -3,7 +3,7 @@ section=2
 auditno="2.1.5"
 auditname="Ensure DHCP Server is not installed"
 
-cmd=$(dpkg-query -l  | grep -E isc-dhcp-server )
+cmd=$(dpkg-query -l  | grep -E isc-dhcp-server | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

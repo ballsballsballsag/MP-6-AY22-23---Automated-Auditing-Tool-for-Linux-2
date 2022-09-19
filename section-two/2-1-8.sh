@@ -3,7 +3,7 @@ section=2
 auditno="2.1.8"
 auditname="Ensure DNS Server is not installed"
 
-cmd=$(dpkg-query -l | grep bind9)
+cmd=$(dpkg-query -l | grep bind9 | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

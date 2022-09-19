@@ -3,7 +3,7 @@ section=2
 auditno="2.2.5"
 auditname="Ensure LDAP client is not installed"
 
-cmd=$(dpkg-query -l | grep ldap-utils)
+cmd=$(dpkg-query -l | grep ldap-utils | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

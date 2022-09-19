@@ -3,7 +3,7 @@ section=3
 auditno="3.5.2.9"
 auditname="Ensure nftables service is enabled"
 
-cmd=$(systemctl is-enabled nftables)
+cmd=$(systemctl is-enabled nftables | grep 2> \dev\null)
 correct="enabled"
 if [ "$cmd" = "$correct" ]
 then

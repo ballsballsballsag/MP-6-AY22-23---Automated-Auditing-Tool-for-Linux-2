@@ -3,8 +3,8 @@ section=2
 auditno="2.1.1.2"
 auditname="Ensure systemd-timesyncd is configured"
 
-cmd=$(dpkg -s ntp)
-cmd1=$(dpkg -s chrony)
+cmd=$(dpkg -s ntp | grep 2> \dev\null)
+cmd1=$(dpkg -s chrony | grep 2> \dev\null)
 cmd2=$(systemctl is-enabled systemd-timesyncd.service)
 cmd3=$(timedatectl status)
 correct=""

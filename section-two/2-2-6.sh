@@ -3,7 +3,7 @@ section=2
 auditno="2.2.6"
 auditname="Ensure RPC is not installed"
 
-cmd=$(dpkg-query -l | grep rpcbind)
+cmd=$(dpkg-query -l | grep rpcbind | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then
