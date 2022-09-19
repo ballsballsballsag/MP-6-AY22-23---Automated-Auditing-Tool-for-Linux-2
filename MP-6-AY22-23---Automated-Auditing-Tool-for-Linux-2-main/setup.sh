@@ -11,6 +11,7 @@ sudo mkdir /script
 sudo cp -R $final /script
 sudo chmod u+x /script/UI.sh
 sudo ln -s /script/UI.sh /usr/local/bin/audit
+apt install nftables
 #5=$(crontab -u audit -e)
 
 echo "Setup completed. Use command <audit> to run the CLI UI.\nUse root or sudo approved accounts only"
