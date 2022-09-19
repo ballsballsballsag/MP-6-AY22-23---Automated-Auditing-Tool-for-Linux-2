@@ -1,6 +1,6 @@
 
 
-echo  "Hello, at which intervals of the year would you like the benchmark to run automatically?\nUse -h for the help option. It will show the dates wherby the automating auditing will be executed on.\nE>
+echo  "Hello, at which intervals of the year would you like the benchmark to run automatically?\nUse -h for the help option,it will also show the intervals which the benchmark would be ran on depending on the presets"
 read option
 help="-h"
 
@@ -68,4 +68,3 @@ cat help_cronjob.txt
 else
 echo "Option is invalid"
 fi
-
