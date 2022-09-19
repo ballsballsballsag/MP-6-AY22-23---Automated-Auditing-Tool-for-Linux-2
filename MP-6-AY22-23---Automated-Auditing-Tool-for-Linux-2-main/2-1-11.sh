@@ -3,8 +3,8 @@ section=2
 auditno="2.1.11"
 auditname="Ensure IMAP and POP3 server are not installed"
 
-cmd=$(dpkg-query -l | grep imapd)
-cmd1=$(dpkg-query -l |grep pop3d)
+cmd=$(dpkg-query -l | grep imapd | grep 2> \dev\null)
+cmd1=$(dpkg-query -l |grep pop3d | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ] && [ ! -z "$cmd1" ]
 then

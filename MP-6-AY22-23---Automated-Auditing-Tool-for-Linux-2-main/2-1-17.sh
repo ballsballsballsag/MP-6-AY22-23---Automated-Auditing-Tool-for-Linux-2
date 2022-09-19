@@ -3,7 +3,7 @@ section=2
 auditno="2.1.17"
 auditname="Ensure NIS Server is not installed"
 
-cmd=$(dpkg-query -l | grep nis)
+cmd=$(dpkg-query -l | grep nis | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

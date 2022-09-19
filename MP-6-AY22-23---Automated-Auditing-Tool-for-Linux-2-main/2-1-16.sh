@@ -3,7 +3,7 @@ section=2
 auditno="2.1.16"
 auditname="Ensure rsync service is not installed"
 
-cmd=$(dpkg -s rsync | grep rsync)
+cmd=$(dpkg -s rsync | grep rsync | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

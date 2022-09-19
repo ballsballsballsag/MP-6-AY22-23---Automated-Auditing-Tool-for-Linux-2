@@ -3,7 +3,7 @@ section=3
 auditno="3.5.2.4"
 auditname="Ensure a nftables table exists"
 
-cmd=$(nft list tables)
+cmd=$(nft list tables | grep 2> \dev\null)
 correct=""
 if [ "$cmd" != "$correct" ]
 then

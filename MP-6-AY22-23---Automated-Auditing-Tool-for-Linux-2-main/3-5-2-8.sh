@@ -3,9 +3,9 @@ section=3
 auditno="3.5.2.8"
 auditname="Ensure nftables default deny firewall policy"
 
-cmd=$(nft list ruleset | grep 'hook input')
-cmd1=$(nft list ruleset | grep 'hook forward')
-cmd2=$(nft list ruleset | grep 'hook output')
+cmd=$(nft list ruleset | grep 'hook input' | grep 2> \dev\null) 
+cmd1=$(nft list ruleset | grep 'hook forward' | grep 2> \dev\null)
+cmd2=$(nft list ruleset | grep 'hook output' | grep 2> \dev\null)
 correct=""
 correct1=""
 correct2=""

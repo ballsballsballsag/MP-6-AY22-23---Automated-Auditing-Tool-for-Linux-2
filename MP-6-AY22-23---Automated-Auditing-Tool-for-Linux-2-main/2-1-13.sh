@@ -3,7 +3,7 @@ section=2
 auditno="2.1.13"
 auditname="Ensure HTTP Proxy Server is not installed"
 
-cmd=$(dpkg-query -l | grep squid)
+cmd=$(dpkg-query -l | grep squid | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

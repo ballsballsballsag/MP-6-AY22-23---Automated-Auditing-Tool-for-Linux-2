@@ -3,7 +3,7 @@ section=2
 auditno="2.2.4"
 auditname="Ensure telnet client is not installed"
 
-cmd=$(dpkg-query -l | grep telnet)
+cmd=$(dpkg-query -l | grep telnet | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

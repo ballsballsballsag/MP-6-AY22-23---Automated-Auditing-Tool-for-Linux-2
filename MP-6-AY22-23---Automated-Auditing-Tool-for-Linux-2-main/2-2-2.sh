@@ -3,7 +3,7 @@ section=2
 auditno="2.2.2"
 auditname="Ensure rsh client is not installed"
 
-cmd=$(dpkg-query -l | grep rsh-client)
+cmd=$(dpkg-query -l | grep rsh-client | grep 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

@@ -3,9 +3,9 @@ section=3
 auditno="3.5.3.1.3"
 auditname="Ensure ufw is installed or disabled with iptables"
 
-cmd=$(dpkg-query -l | grep ufw)
-cmd1=$(ufw status)
-cmd2=$(systemctl is-enabled ufw)
+cmd=$(dpkg-query -l | grep ufw | grep 2> \dev\null)
+cmd1=$(ufw status | grep 2> \dev\null)
+cmd2=$(systemctl is-enabled ufw | grep 2> \dev\null)
 correct1="Status: inactive"
 correct2="masked"
 if [ ! -z "$cmd" ] && [ "$cmd1" != "$correct1" ] && [ "$cmd2" != "$correct2" ]
