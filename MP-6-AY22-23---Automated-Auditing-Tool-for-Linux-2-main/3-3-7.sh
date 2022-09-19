@@ -5,8 +5,8 @@ auditname="Ensure Reverse Path Filtering is enabled"
 
 cmd=$(sysctl net.ipv4.conf.all.rp_filter)
 cmd1=$(sysctl net.ipv4.conf.default.rp_filter)
-cmd2=$(grep "net\.ipv4\.conf\.all\.rp_filter" /etc/sysctl.conf /etc/sysctl.d/*)
-cmd3=$(grep "net\.ipv4\.conf\.default\.rp_filter" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd2=$(grep "net\.ipv4\.conf\.all\.rp_filter" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
+cmd3=$(grep "net\.ipv4\.conf\.default\.rp_filter" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 correct="net.ipv4.conf.all.rp_filter = 1"
 correct1="net.ipv4.conf.default.rp_filter = 1"
 correct2="net.ipv4.conf.all.rp_filter = 1"

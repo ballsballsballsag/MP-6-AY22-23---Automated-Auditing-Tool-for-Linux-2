@@ -5,8 +5,8 @@ auditname="Ensure packet redirect sending is disabled"
 
 cmd=$(sysctl net.ipv4.conf.all.send_redirects)
 cmd1=$(sysctl net.ipv4.conf.default.send_redirects)
-cmd2=$(grep -E "^\s*net\.ipv4\.conf\.all\.send_redirects" /etc/sysctl.conf /etc/sysctl.d/*)
-cmd3=$(grep -E "^\s*net\.ipv4\.conf\.default\.send_redirects" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd2=$(grep -E "^\s*net\.ipv4\.conf\.all\.send_redirects" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
+cmd3=$(grep -E "^\s*net\.ipv4\.conf\.default\.send_redirects" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 correct="net.ipv4.conf.all.send_redirects = 0"
 correct1="net.ipv4.conf.default.send_redirects = 0"
 correct2="/etc/sysctl.conf:net.ipv4.conf.all.send_redirects = 0

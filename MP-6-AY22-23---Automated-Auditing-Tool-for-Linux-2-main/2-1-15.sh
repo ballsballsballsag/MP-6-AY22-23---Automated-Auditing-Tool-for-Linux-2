@@ -3,7 +3,7 @@ section=2
 auditno="2.1.15"
 auditname="Ensure mail transfer agent is configured for local-only mode"
 
-cmd=$(ss -lntu | grep -E ':25\s' | grep -E -v '\s(127.0.0.1|::1):25\s' | grep 2> \dev\null)
+cmd=$(ss -lntu | grep -E ':25\s' | grep -E -v '\s(127.0.0.1|::1):25\s' 2> \dev\null)
 correct=""
 if [ "$cmd" = "$correct" ]
 then

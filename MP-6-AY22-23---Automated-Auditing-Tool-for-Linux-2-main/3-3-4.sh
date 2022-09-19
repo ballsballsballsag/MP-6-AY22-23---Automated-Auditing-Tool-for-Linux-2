@@ -5,8 +5,8 @@ auditname="Ensure suspicious packets are logged"
 
 cmd=$(sysctl net.ipv4.conf.all.log_martians)
 cmd1=$(sysctl net.ipv4.conf.default.log_martians)
-cmd2=$(grep "net\.ipv4\.conf\.all\.log_martians" /etc/sysctl.conf /etc/sysctl.d/*)
-cmd3=$(grep "net\.ipv4\.conf\.default\.log_martians" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd2=$(grep "net\.ipv4\.conf\.all\.log_martians" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
+cmd3=$(grep "net\.ipv4\.conf\.default\.log_martians" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 correct="net.ipv4.conf.all.log_martians = 1"
 correct1="net.ipv4.conf.default.log_martians = 1"
 correct2="/etc/sysctl.conf:#net.ipv4.conf.all.log_martians = 1"

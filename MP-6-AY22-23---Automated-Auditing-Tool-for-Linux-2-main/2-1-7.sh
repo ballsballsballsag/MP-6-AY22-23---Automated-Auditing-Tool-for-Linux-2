@@ -3,7 +3,7 @@ section=2
 auditno="2.1.7"
 auditname="Ensure NFS is not installed"
 
-cmd=$(dpkg-query -l | grep nfs-kernel-server | grep 2> \dev\null)
+cmd=$(dpkg-query -l | grep nfs-kernel-server 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

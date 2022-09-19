@@ -5,12 +5,12 @@ auditname="Ensure source routed packets are not accepted"
 
 cmd=$(sysctl net.ipv4.conf.all.accept_source_route)
 cmd1=$(sysctl net.ipv4.conf.default.accept_source_route)
-cmd2=$(grep "net\.ipv4\.conf\.all\.accept_source_route" /etc/sysctl.conf /etc/sysctl.d/*)
-cmd3=$(grep "net\.ipv4\.conf\.default\.accept_source_route" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd2=$(grep "net\.ipv4\.conf\.all\.accept_source_route" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
+cmd3=$(grep "net\.ipv4\.conf\.default\.accept_source_route" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 cmd4=$(sysctl net.ipv6.conf.all.accept_source_route)
 cmd5=$(sysctl net.ipv6.conf.default.accept_source_route)
-cmd6=$(grep "net\.ipv6\.conf\.all\.accept_source_route" /etc/sysctl.conf /etc/sysctl.d/*)
-cmd7=$(grep "net\.ipv6\.conf\.default\.accept_source_route" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd6=$(grep "net\.ipv6\.conf\.all\.accept_source_route" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
+cmd7=$(grep "net\.ipv6\.conf\.default\.accept_source_route" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 correct="net.ipv4.conf.all.accept_source_route = 0"
 correct1="net.ipv4.conf.default.accept_source_route = 0"
 correct2="/etc/sysctl.conf:#net.ipv4.conf.all.accept_source_route = 0"

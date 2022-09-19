@@ -3,10 +3,10 @@ section=2
 auditno="2.1.1.3"
 auditname="Ensure chrony is configured"
 
-cmd=$(dpkg -s ntp | grep -E '(Status :|not installed)' | grep 2> \dev\null)
-cmd1=$(systemctl is-enabled systemd-timesyncd | grep 2> \dev\null)
-cmd2=$(grep -E "^(server|pool)" /etc/chrony/chrony.conf | grep 2> \dev\null)
-cmd3=$(ps -ef | grep chronyd | cut -f 1 | grep 2> \dev\null
+cmd=$(dpkg -s ntp | grep -E '(Status :|not installed)'  2> \dev\null)
+cmd1=$(systemctl is-enabled systemd-timesyncd  2> \dev\null)
+cmd2=$(grep -E "^(server|pool)" /etc/chrony/chrony.conf  2> \dev\null)
+cmd3=$(ps -ef | grep chronyd | cut -f 1  2> \dev\null)
 correct=""
 correct1="masked"
 correct2=""

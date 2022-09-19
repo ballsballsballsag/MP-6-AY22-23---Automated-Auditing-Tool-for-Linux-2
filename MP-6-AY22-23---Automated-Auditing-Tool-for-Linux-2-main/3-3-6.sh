@@ -4,7 +4,7 @@ auditno="3.3.6"
 auditname="Ensure bogus ICMP responses are ignored"
 
 cmd=$(sysctl net.ipv4.icmp_ignore_bogus_error_responses)
-cmd1=$(grep "net.ipv4.icmp_ignore_bogus_error_responses" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd1=$(grep "net.ipv4.icmp_ignore_bogus_error_responses" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 correct="net.ipv4.icmp_ignore_bogus_error_responses = 1"
 correct1="net.ipv4.icmp_ignore_bogus_error_responses = 1"
 

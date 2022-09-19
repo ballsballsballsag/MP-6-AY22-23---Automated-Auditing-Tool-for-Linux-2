@@ -3,7 +3,7 @@ section=2
 auditno="2.2.3"
 auditname="Ensure talk client is not installed"
 
-cmd=$(dpkg-query -l | grep talk | grep 2> \dev\null)
+cmd=$(dpkg-query -l | grep talk 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

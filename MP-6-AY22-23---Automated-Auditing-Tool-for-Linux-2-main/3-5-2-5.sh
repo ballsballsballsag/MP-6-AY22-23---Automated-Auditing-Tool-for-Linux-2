@@ -3,9 +3,9 @@ section=3
 auditno="3.5.2.5"
 auditname="Ensure nftables base chain exists"
 
-cmd=$(nft list ruleset | grep 'hook input' | grep 2> \dev\null)
-cmd1=$(nft list ruleset | grep 'hook forward' | grep 2> \dev\null)
-cmd2=$(nft list ruleset | grep 'hook output' | grep 2> \dev\null)
+cmd=$(nft list ruleset | grep 'hook input' 2> \dev\null)
+cmd1=$(nft list ruleset | grep 'hook forward' 2> \dev\null)
+cmd2=$(nft list ruleset | grep 'hook output' 2> \dev\null)
 correct="type filter hook input priority 0;"
 correct1="type filter hook forward priority 0;"
 correct2="type filter hook output priority 0;"

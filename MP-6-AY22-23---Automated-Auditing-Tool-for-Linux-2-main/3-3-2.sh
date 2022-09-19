@@ -5,12 +5,12 @@ auditname="Ensure ICMP redirects are not accepted"
 
 cmd=$(sysctl net.ipv4.conf.all.accept_redirects)
 cmd1=$(sysctl net.ipv4.conf.default.accept_redirects)
-cmd2=$(grep "net\.ipv4\.conf\.all\.accept_redirects" /etc/sysctl.conf /etc/sysctl.d/*)
-cmd3=$(grep "net\.ipv4\.conf\.default\.accept_redirects" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd2=$(grep "net\.ipv4\.conf\.all\.accept_redirects" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
+cmd3=$(grep "net\.ipv4\.conf\.default\.accept_redirects" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 cmd4=$(sysctl net.ipv6.conf.all.accept_redirects)
 cmd5=$(sysctl net.ipv6.conf.default.accept_redirects)
-cmd6=$(grep "net\.ipv6\.conf\.all\.accept_redirects" /etc/sysctl.conf /etc/sysctl.d/*)
-cmd7=$(grep "net\.ipv6\.conf\.default\.accept_redirects" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd6=$(grep "net\.ipv6\.conf\.all\.accept_redirects" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
+cmd7=$(grep "net\.ipv6\.conf\.default\.accept_redirects" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 correct="net.ipv4.conf.all.accept_redirects = 0"
 correct1="net.ipv4.conf.default.accept_redirects = 0"
 correct2="/etc/sysctl.conf:#net.ipv4.conf.all.accept_redirects = 0"

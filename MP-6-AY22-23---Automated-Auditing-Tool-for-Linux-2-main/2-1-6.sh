@@ -4,7 +4,7 @@ section=2
 auditno="2.1.6"
 auditname="Ensure LDAP server is not installed"
 
-cmd=$(dpkg-query -l | grep slapd | grep 2> \dev\null)
+cmd=$(dpkg-query -l | grep slapd 2> \dev\null)
 
 if [ ! -z "$cmd" ]
 then

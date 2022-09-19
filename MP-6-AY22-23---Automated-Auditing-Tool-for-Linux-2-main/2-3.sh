@@ -3,7 +3,7 @@ section=2
 auditno="2.3"
 auditname="Ensure nonessential services are removed or masked"
 
-cmd=$(lsof -i -P -n | grep -v "(ESTABLISHED)" | grep 2> \dev\null)
+cmd=$(lsof -i -P -n | grep -v "(ESTABLISHED)" 2> \dev\null)
 correct=""
 
 if [ "$cmd" = "$correct" ]

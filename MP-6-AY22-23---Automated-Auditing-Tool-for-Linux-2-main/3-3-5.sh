@@ -4,7 +4,7 @@ auditno="3.3.5"
 auditname="Ensure broadcast ICMP requests are ignored"
 
 cmd=$(sysctl net.ipv4.icmp_echo_ignore_broadcasts)
-cmd1=$(grep "net\.ipv4\.icmp_echo_ignore_broadcasts" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd1=$(grep "net\.ipv4\.icmp_echo_ignore_broadcasts" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 correct="net.ipv4.icmp_echo_ignore_broadcasts = 1"
 correct1="net.ipv4.icmp_echo_ignore_broadcasts = 1"
 if [ "$cmd" = "$correct" ] && [ "$cmd1" = "$correct1" ]

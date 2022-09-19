@@ -5,8 +5,8 @@ auditname="Ensure IPv6 router advertisements are not accepted"
 
 cmd=$(sysctl net.ipv6.conf.all.accept_ra)
 cmd1=$(sysctl net.ipv6.conf.default.accept_ra)
-cmd2=$(grep "net\.ipv6\.conf\.all\.accept_ra" /etc/sysctl.conf /etc/sysctl.d/*)
-cmd3=$(grep "net\.ipv6\.conf\.default\.accept_ra" /etc/sysctl.conf /etc/sysctl.d/*)
+cmd2=$(grep "net\.ipv6\.conf\.all\.accept_ra" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
+cmd3=$(grep "net\.ipv6\.conf\.default\.accept_ra" /etc/sysctl.conf /etc/sysctl.d/* 2> \dev\null)
 correct="net.ipv6.conf.all.accept_ra = 0"
 correct1="net.ipv6.conf.default.accept_ra = 0"
 correct2="net.ipv6.conf.all.accept_ra = 0"
