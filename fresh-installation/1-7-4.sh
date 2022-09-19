@@ -1,0 +1,20 @@
+#!/bin/sh
+section=1
+auditno="1.7.4"
+auditname="Ensure permissions on /etc/motd are configured"
+
+cmd=$(stat -L /etc/motd 2> /dev/null | grep Uid)
+correct="Access: (0644/-rw-r--r--)  Uid: (    0/    root)   Gid: (    0/    root)"
+
+
+
+
+if [ "$cmd" = "$correct" ] || [ -z "$cmd" ]
+then
+        auditres="\033[32mPass\033[m"
+
+else
+        auditres="\033[31mFail\033[m"
+
+fi
+echo "${auditno} \t\t${auditname} \t\t\t\t[${auditres}]"
