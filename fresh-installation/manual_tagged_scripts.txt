@@ -1,0 +1,105 @@
+
+Audit Number:
+Audit Name:
+Command(s):
+How to run audit:
+Remediations:
+
+======================================================================================================
+
+Audit Number: 1.1.1.6
+Audit Name: Ensure mounting of squashfs filesystems is disabled
+Command(s): 
+# modprobe -n -v squashfs | grep -E '(squashfs|install)'
+
+# lsmod | grep squashfs
+
+How to run audit: 
+Run the first command first verify if the results is correct.
+The same applies for second command.
+
+Desired ouput:install /bin/true (1st), <No output> (2nd)
+Remediations:
+
+Edit or create a file in the /etc/modprobe.d/ directory ending in .conf Example: vi /etc/modprobe.d/squashfs.conf Add the following line: install squashfs /bin/true
+Run the following command to unload the squashfs module: # rmmod squashfs
+
+
+Audit Number: 1.1.19
+Audit Name: Ensure nodev option set on removable media partitions
+Command(s): 
+# mount
+How to run audit: run the command mount and ensure that removable media partitions have nodev option set(some examples include partitions for floppy diskette,CD-ROM, Digital Video Disc (DVD) and USB devices)
+Remediations:
+Edit the /etc/fstab file and add nodev to the fourth field (mounting options) of all removable media partitions. Look for entries that have mount points that contain words such as floppy or cdrom. See the fstab(5) manual page for more information.
+
+
+Audit Number: 1.1.20
+Audit Name: Ensure nosuid option set on removable media partitions
+Command(s):
+# mount
+How to run audit:run the command mount and ensure that removable media partitions have nosuid option set(some examples include partitions for floppy diskette,CD-ROM, Digital Video Disc (DVD) and USB devices)
+Remediations:
+Edit the /etc/fstab file and add nosuid to the fourth field (mounting options) of all removable media partitions. Look for entries that have mount points that contain words such as floppy or cdrom. See the fstab(5) manual page for more information.
+
+
+Audit Number: 1.1.21
+Audit Name: Ensure noexec option set on removable media partitions
+Command(s):
+# mount
+How to run audit:run the command mount and ensure that removable media partitions have noexec option set(some examples include partitions for floppy diskette,CD-ROM, Digital Video Disc (DVD) and USB devices)
+Remediations:
+Edit the /etc/fstab file and add noexec to the fourth field (mounting options) of all removable media partitions. Look for entries that have mount points that contain words such as floppy or cdrom. See the fstab(5) manual page for more information.
+
+
+Audit Number: 1.2.1 
+Audit Name: Ensure package manager repositories are configured
+Command(s):
+# apt-cache policy
+How to run audit: Run the command and ensure that only trusted repository are inside the list. Based on the companies policy.
+Remediations: Configure your package manager repositories according to company/site policy.
+
+
+
+Audit Number: 1.2.2
+Audit Name: Ensure GPG keys are configured
+Command(s): 
+# apt-key list
+How to run audit: After running the command compare the keys listed to the actual gpg key and UID. Based on company/site policy.
+Remediations: Update your package manager GPG keys in accordance with company/site policy.
+
+
+Audit Number: 1.5.1 
+Audit Name: Ensure XD/NX support is enabled
+Command(s):
+# journalctl | grep 'protection: active' kernel: NX (Execute Disable) protection: active
+
+OR on systems WITHOUT journalctl: # [[ -n $(grep noexec[0-9]*=off /proc/cmdline) || -z $(grep -E -i ' (pae|nx) ' /proc/cpuinfo) || -n $(grep '\sNX\s.*\sprotection:\s' /var/log/dmesg | grep -v active) ]] && echo "NX Protection is not active"
+How to run audit: Run the commands the first command should return "kernel: NX (Execute Disable) protection: active" else it is a non-compliance. However for system's without journalctl run the second command and no output should be returned
+Remediations: On 32 bit systems install a kernel with PAE support, no installation is required on 64 bit systems: If necessary configure your bootloader to load the new kernel and reboot the system. You may need to enable NX or XD support in your bios.
+
+
+Audit Number: 1.8.1 
+Audit Name: Ensure GNOME Display Manager is removed
+Command(s):
+# dpkg -s gdm3 | grep -E '(Status:|not installed)' 
+
+How to run audit: Run the command and verify if it matches the following output (dpkg-query: package 'gdm3' is not installed and no information is available)
+Remediations: 
+# apt purge gdm3 
+Run the command above to remove GNOME Display Manager
+
+
+
+Audit Number: 1.9
+Audit Name: Ensure updates, patches, and additional security software are installed
+Command(s): 
+# apt -s upgrade
+
+How to run audit: Run the command and verify there is no updates or patches to be installed. User may choose to do a apt -s upgrade | grep "not upgraded" to see the the number of services that has yet to be upgraded
+Remediations: 
+# apt upgrade
+OR 
+# apt dist-upgrade
+
+Run either of the commands to upgrade
