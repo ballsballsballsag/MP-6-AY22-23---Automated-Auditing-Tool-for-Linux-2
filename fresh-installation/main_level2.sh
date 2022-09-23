@@ -396,17 +396,17 @@ else
         fcount=$((fcount+1))
 fi
 
-sh 4-1-11.sh
-sh 4-1-11.sh   >> /script/report_lvl2.txt
-ret=$(sh 4-1-11.sh)
-ret=${ret::-4}
-ret=${ret: -4}
-if [ "$ret" == "Pass" ]
-then
-        pcount=$((pcount+1))
-else
-        fcount=$((fcount+1))
-fi
+#sh 4-1-11.sh
+#sh 4-1-11.sh   >> /script/report_lvl2.txt
+#ret=$(sh 4-1-11.sh)
+#ret=${ret::-4}
+#ret=${ret: -4}
+#if [ "$ret" == "Pass" ]
+#then
+#        pcount=$((pcount+1))
+#else
+#       fcount=$((fcount+1))
+#fi
 
 sh 4-1-12.sh
 sh 4-1-12.sh   >> /script/report_lvl2.txt
